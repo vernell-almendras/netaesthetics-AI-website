@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NetAesthetics — AI Implementation Partner | Build AI Into Your Business</title>
+<meta name="description" content="We build AI into your apps, operations, and workflows — in 6 weeks, not 6 months. Government-grade security. 340% average ROI. Free assessment for growth companies.">
+<meta property="og:title" content="NetAesthetics — We Build AI Into Your Business">
+<meta property="og:description" content="Strategy through deployment in 6 weeks. Government-grade security. Proven 340% average ROI across 50+ implementations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://netaesthetics.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Organization",
+"name":"NetAesthetics",
+"url":"https://netaesthetics.com",
+"description":"AI Strategy & Implementation Partner for Growth Companies. We build AI into your apps, operations, and workflows.",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"2001 L Street NW, Suite 500",
+"addressLocality":"Washington",
+"addressRegion":"DC",
+"postalCode":"20036",
+"addressCountry":"US"
+},
+"telephone":"+12026008034",
+"email":"solutions@netaesthetics.com",
+"foundingDate":"2005"
+}
+</script>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"How much does AI implementation cost?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"NetAesthetics offers four engagement tiers: AI Opportunity Audit ($9,500, 1 week), AI Assessment ($25,000, 2 weeks), AI Strategy ($49,500, 6 weeks), and AI Implementation ($175,000+, 6+ months). Each delivers standalone value with no obligation to proceed further."
+}
+},
+{
+"@type":"Question",
+"name":"How is NetAesthetics different from other AI consultants?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"We don't just advise — we build. Most AI consultants provide strategy then hand off to developers. We combine strategic guidance with full-stack execution, delivering complete solutions from strategy through production deployment with government-grade security. Our CEO serves on the FirstNet Authority Board."
+}
+},
+{
+"@type":"Question",
+"name":"How long does AI implementation take?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Our average deployment timeline is 6 weeks from kickoff to production — compared to 6-18 months at traditional consultancies. Our AI Opportunity Audit takes just 1 week and identifies your highest-ROI opportunity immediately."
+}
+}
+]
+}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px}
+body{background:#000;color:#f5f5f7;font-family:'Inter',system-ui,-apple-system,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.serif-i{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.mono{font-family:'Space Mono',monospace}
+.container{max-width:1080px;margin:0 auto;padding:0 max(24px,5vw)}
+nav{
+position:fixed;top:0;left:0;right:0;z-index:1000;
+background:rgba(0,0,0,.72);
+backdrop-filter:saturate(180%) blur(20px);
+-webkit-backdrop-filter:saturate(180%) blur(20px);
+border-bottom:1px solid rgba(255,255,255,.06);
+transition:all .4s;
+}
+nav.scrolled{
+border-image:linear-gradient(90deg,transparent,rgba(234,68,148,.15),rgba(21,157,230,.15),transparent) 1;
+}
+.nav-inner{
+max-width:1080px;margin:0 auto;padding:0 max(24px,5vw);
+height:52px;
+display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-weight:800;font-size:.95rem;letter-spacing:-.02em;color:#f5f5f7;text-decoration:none}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:rgba(245,245,247,.55);text-decoration:none;font-size:.8rem;font-weight:400;transition:color .25s}
+.nav-links a:hover{color:#f5f5f7}
+.nav-cta-btn{
+background:#2997ff;color:#fff !important;
+padding:7px 18px;border-radius:980px;font-size:.75rem;font-weight:600;
+text-decoration:none;transition:all .25s;
+}
+.nav-cta-btn:hover{background:#0077ed}
+.hero{
+min-height:100vh;min-height:100dvh;
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+text-align:center;
+padding:120px 24px 100px;
+position:relative;
+overflow:hidden;
+}
+.hero-video-bg{
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+object-fit:cover;
+z-index:0;
+opacity:.15;
+}
+.hero::before{
+content:'';position:absolute;
+top:45%;left:50%;transform:translate(-50%,-50%);
+width:min(1000px,140vw);height:min(1000px,140vw);
+background:
+radial-gradient(ellipse 50% 40% at 30% 45%,rgba(234,68,148,.055),transparent 60%),
+radial-gradient(ellipse 40% 50% at 70% 55%,rgba(21,157,230,.04),transparent 60%);
+pointer-events:none;
+z-index:1;
+}
+.hero-sweep{
+position:absolute;top:0;left:0;right:0;
+height:1px;
+background:linear-gradient(90deg,transparent 10%,rgba(234,68,148,.12) 30%,rgba(21,157,230,.12) 70%,transparent 90%);
+box-shadow:0 0 40px 20px rgba(234,68,148,.02);
+animation:sweep 9s linear infinite;
+pointer-events:none;z-index:1;
+}
+@keyframes sweep{
+0%{top:-1px;opacity:0}
+8%{opacity:1}
+92%{opacity:1}
+100%{top:100%;opacity:0}
+}
+.particles{position:absolute;inset:0;pointer-events:none;z-index:1}
+.particle{
+position:absolute;
+width:2px;height:2px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+animation:float-up linear infinite;
+}
+@keyframes float-up{
+0%{transform:translateY(0) scale(1);opacity:0}
+10%{opacity:1}
+90%{opacity:1}
+100%{transform:translateY(-100vh) scale(.5);opacity:0}
+}
+.hero-content{position:relative;z-index:2;max-width:780px}
+.hero-eyebrow{
+font-family:'Space Mono',monospace;
+font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;
+color:rgba(245,245,247,.35);
+margin-bottom:36px;
+opacity:0;animation:si .7s .15s forwards;
+}
+.hero h1{
+font-size:clamp(2.8rem,8vw,5.8rem);
+font-weight:900;line-height:.93;
+letter-spacing:-.045em;
+margin-bottom:24px;
+opacity:0;animation:si .8s .3s forwards;
+}
+.hero h1 .glow{
+background:linear-gradient(90deg,#EA4494,#9B59D0,#159DE6);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+background-size:200% 100%;
+animation:si .8s .3s forwards, shimmer 8s ease-in-out infinite;
+}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-sub{
+font-size:clamp(1.05rem,2.2vw,1.35rem);
+font-weight:300;color:rgba(245,245,247,.55);
+letter-spacing:-.01em;
+line-height:1.55;
+max-width:540px;margin:0 auto;
+margin-bottom:12px;
+opacity:0;animation:si .7s .5s forwards;
+}
+.hero-proof{
+font-size:clamp(.8rem,1.5vw,.92rem);
+color:rgba(245,245,247,.28);
+font-weight:300;
+margin-bottom:48px;
+opacity:0;animation:si .7s .65s forwards;
+}
+.hero-buttons{
+display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+opacity:0;animation:si .7s .8s forwards;
+}
+.btn-blue{
+background:#2997ff;color:#fff;
+padding:15px 32px;border-radius:980px;
+font-size:.9rem;font-weight:600;
+text-decoration:none;transition:all .25s;
+display:inline-block;
+}
+.btn-blue:hover{background:#0077ed}
+.btn-film{
+color:#2997ff;
+padding:15px 32px;border-radius:980px;
+font-size:.9rem;font-weight:500;
+text-decoration:none;
+display:inline-flex;align-items:center;gap:8px;transition:all .25s;
+}
+.btn-film:hover{color:#6cb8f7}
+.btn-film svg{width:16px;height:16px;fill:currentColor}
+.scroll-hint{
+position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+display:flex;flex-direction:column;align-items:center;gap:10px;
+opacity:0;animation:si .7s 1.1s forwards;
+z-index:2;
+}
+.scroll-hint span{
+font-family:'Space Mono',monospace;
+font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+color:rgba(255,255,255,.2);
+}
+.scroll-hint .line{
+width:1px;height:36px;
+background:linear-gradient(to bottom,rgba(255,255,255,.45),transparent);
+animation:scrollPulse 2.5s ease-in-out infinite;
+}
+@keyframes scrollPulse{0%,100%{opacity:.25;transform:scaleY(.65)}50%{opacity:.75;transform:scaleY(1)}}
+@keyframes si{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.pinned-stats{display:none}
+.pinned-stats-sticky{
+position:sticky;top:0;
+height:100vh;
+display:flex;align-items:center;justify-content:center;
+overflow:hidden;
+}
+.stat-display{text-align:center;transition:opacity .35s,transform .35s}
+.stat-big{
+font-size:clamp(5rem,18vw,13rem);
+font-weight:900;letter-spacing:-.06em;line-height:.85;
+background:linear-gradient(135deg,#EA4494,#159DE6);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat-desc{
+font-size:clamp(.95rem,1.8vw,1.3rem);
+color:rgba(245,245,247,.4);font-weight:300;
+margin-top:16px;letter-spacing:-.01em;
+}
+.manifesto{padding:160px 0;text-align:center;position:relative}
+.manifesto::before,.manifesto::after{
+content:'';position:absolute;left:50%;transform:translateX(-50%);
+width:min(600px,80vw);height:1px;
+background:linear-gradient(90deg,transparent,rgba(234,68,148,.12),rgba(21,157,230,.12),transparent);
+}
+.manifesto::before{top:0}
+.manifesto::after{bottom:0}
+.manifesto h2{
+font-size:clamp(1.6rem,4vw,3.2rem);
+font-weight:700;letter-spacing:-.035em;line-height:1.2;
+max-width:800px;margin:0 auto;
+}
+.manifesto h2 .dim{color:rgba(245,245,247,.25)}
+.scene{
+min-height:100vh;
+display:flex;align-items:center;
+padding:120px 0;
+position:relative;
+border-top:1px solid rgba(255,255,255,.05);
+}
+.scene-inner{
+max-width:1080px;margin:0 auto;padding:0 max(24px,5vw);
+display:grid;grid-template-columns:1fr 1fr;gap:80px;
+align-items:center;width:100%;
+}
+.scene-text h3{
+font-size:clamp(1.8rem,3.5vw,2.8rem);
+font-weight:800;letter-spacing:-.04em;line-height:1.08;
+margin-bottom:20px;
+}
+.scene-text p{
+font-size:1rem;color:rgba(245,245,247,.45);
+line-height:1.75;font-weight:300;margin-bottom:24px;max-width:400px;
+}
+.scene-text .learn{
+color:#2997ff;font-size:.88rem;text-decoration:none;font-weight:500;
+display:inline-flex;align-items:center;gap:6px;transition:gap .25s;
+}
+.scene-text .learn:hover{gap:10px}
+.scene-text .learn::after{content:'›';font-size:1.1rem}
+.scene-visual{
+aspect-ratio:1;border-radius:24px;
+display:flex;align-items:center;justify-content:center;
+position:relative;overflow:hidden;
+}
+.scene-visual::after{
+content:'';position:absolute;inset:0;border-radius:inherit;
+border:1px solid rgba(255,255,255,.06);pointer-events:none;
+}
+.scene-visual video{
+width:100%;height:100%;
+object-fit:cover;
+opacity:.5;
+}
+.sv-1{background:radial-gradient(ellipse at 35% 40%,rgba(234,68,148,.1),#0a0a0a 65%)}
+.sv-2{background:radial-gradient(ellipse at 65% 55%,rgba(21,157,230,.1),#0a0a0a 65%)}
+.sv-3{background:radial-gradient(ellipse at 50% 35%,rgba(123,47,190,.1),#0a0a0a 65%)}
+.scene-svg{width:60%;height:60%;opacity:.35}
+.visual-label{
+position:absolute;bottom:20px;left:20px;
+font-family:'Space Mono',monospace;font-size:.55rem;
+letter-spacing:.2em;text-transform:uppercase;
+color:rgba(255,255,255,.2);
+z-index:1;
+}
+.cases-pinned{position:relative;height:400vh}
+.cases-sticky{
+position:sticky;top:0;height:100vh;
+display:flex;align-items:center;justify-content:center;
+overflow:hidden;
+}
+.case-slide{
+position:absolute;width:min(860px,88vw);text-align:center;
+transition:opacity .5s,transform .5s;
+opacity:0;transform:scale(.96);pointer-events:none;
+}
+.case-slide.active{opacity:1;transform:scale(1);pointer-events:auto}
+.case-slide .case-label{
+font-family:'Space Mono',monospace;font-size:.6rem;
+letter-spacing:.22em;text-transform:uppercase;
+color:#EA4494;margin-bottom:20px;
+}
+.case-slide .metric{
+font-size:clamp(4rem,13vw,9rem);font-weight:900;
+letter-spacing:-.06em;line-height:.85;
+background:linear-gradient(135deg,#EA4494,#9B59D0,#159DE6);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+margin-bottom:16px;
+}
+.case-slide .case-headline{
+font-size:clamp(1rem,2.2vw,1.45rem);
+font-weight:600;letter-spacing:-.015em;margin-bottom:32px;
+}
+.case-slide blockquote{
+font-family:'Instrument Serif',serif;font-style:italic;
+font-size:clamp(1rem,2vw,1.4rem);
+color:rgba(245,245,247,.45);line-height:1.55;
+max-width:600px;margin:0 auto 16px;
+}
+.case-slide cite{
+font-style:normal;font-family:'Inter',sans-serif;
+font-size:.78rem;color:rgba(245,245,247,.3);font-weight:500;
+}
+.case-dots{
+position:absolute;bottom:52px;left:50%;transform:translateX(-50%);
+display:flex;gap:8px;
+}
+.case-dots span{
+width:8px;height:8px;border-radius:50%;
+background:rgba(245,245,247,.15);
+transition:all .4s cubic-bezier(.25,1,.5,1);
+}
+.case-dots span.active{
+width:10px;height:10px;
+background:#EA4494;
+box-shadow:0 0 14px rgba(234,68,148,.4);
+}
+.pricing-section{padding:160px 0;border-top:1px solid rgba(255,255,255,.05)}
+.pricing-header{text-align:center;margin-bottom:10px}
+.pricing-header h2{
+font-size:clamp(1.8rem,4.5vw,3.2rem);
+font-weight:800;letter-spacing:-.04em;
+}
+.pricing-header p{color:rgba(245,245,247,.35);font-size:.95rem;font-weight:300;margin-top:10px}
+.pricing-link{text-align:center;margin-bottom:56px}
+.pricing-link a{color:#2997ff;font-size:.88rem;text-decoration:none;font-weight:500}
+.pricing-link a:hover{text-decoration:underline}
+.pricing-grid{
+max-width:1080px;margin:0 auto;padding:0 max(24px,5vw);
+display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+}
+.p-card{
+background:#1d1d1f;border-radius:20px;
+padding:40px 26px 32px;
+display:flex;flex-direction:column;
+position:relative;
+transition:transform .4s cubic-bezier(.25,1,.5,1);
+}
+.p-card:hover{transform:translateY(-4px)}
+.p-card.pop{
+background:linear-gradient(180deg,#161028,#1d1d1f);
+box-shadow:inset 0 1px 0 rgba(234,68,148,.25),0 0 48px rgba(234,68,148,.05);
+}
+.p-card.pop::before{
+content:'';position:absolute;inset:-1px;border-radius:21px;
+background:linear-gradient(135deg,rgba(234,68,148,.3),rgba(21,157,230,.2));
+z-index:-1;
+animation:borderShift 6s ease-in-out infinite;
+}
+@keyframes borderShift{
+0%,100%{background:linear-gradient(135deg,rgba(234,68,148,.3),rgba(21,157,230,.2))}
+50%{background:linear-gradient(135deg,rgba(21,157,230,.2),rgba(234,68,148,.3))}
+}
+.p-badge{
+position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+background:linear-gradient(90deg,#EA4494,#159DE6);
+color:#fff;font-size:.55rem;font-weight:700;
+padding:4px 14px;border-radius:0 0 8px 8px;
+letter-spacing:.12em;text-transform:uppercase;
+}
+.p-card .tier{font-size:.65rem;color:rgba(245,245,247,.35);margin-bottom:8px;font-weight:500;letter-spacing:.04em}
+.p-card .name{font-size:1.15rem;font-weight:700;margin-bottom:14px;letter-spacing:-.01em}
+.p-card .cost{font-family:'Space Mono',monospace;font-size:2.1rem;font-weight:700;margin-bottom:2px}
+.p-card.pop .cost{
+background:linear-gradient(135deg,#EA4494,#159DE6);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.p-card .dur{font-size:.78rem;color:rgba(245,245,247,.3);margin-bottom:28px}
+.p-card ul{list-style:none;flex:1;margin-bottom:28px}
+.p-card li{font-size:.8rem;color:rgba(245,245,247,.5);padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.p-card .p-btn{
+display:block;text-align:center;padding:12px;border-radius:980px;
+font-size:.82rem;font-weight:600;text-decoration:none;transition:all .25s;
+}
+.p-card .p-btn{background:rgba(245,245,247,.06);color:#f5f5f7}
+.p-card .p-btn:hover{background:rgba(245,245,247,.12)}
+.p-card.pop .p-btn{background:#2997ff;color:#fff}
+.p-card.pop .p-btn:hover{background:#0077ed}
+.audit-callout{
+max-width:1080px;margin:48px auto 0;padding:0 max(24px,5vw);
+}
+.audit-inner{
+border-top:1px solid rgba(255,255,255,.06);
+padding:40px 0;
+display:flex;align-items:center;justify-content:space-between;
+flex-wrap:wrap;gap:20px;
+}
+.audit-left{font-size:.95rem;color:rgba(245,245,247,.4);font-weight:400}
+.audit-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.audit-desc{font-size:.88rem;color:rgba(245,245,247,.55);max-width:380px;line-height:1.55}
+.audit-price{font-family:'Space Mono',monospace;font-weight:700;color:#f5f5f7;white-space:nowrap}
+.audit-link{color:#2997ff;font-size:.88rem;font-weight:500;text-decoration:none;white-space:nowrap}
+.audit-link:hover{text-decoration:underline}
+.faq-section{padding:160px 0;border-top:1px solid rgba(255,255,255,.05)}
+.faq-header{text-align:center;margin-bottom:56px}
+.faq-header h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.03em}
+.faq-list{max-width:720px;margin:0 auto;padding:0 max(24px,5vw)}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden}
+.faq-q{
+padding:24px 0;cursor:pointer;
+display:flex;justify-content:space-between;align-items:center;
+font-size:1rem;font-weight:600;color:#f5f5f7;
+transition:color .25s;
+}
+.faq-q:hover{color:#2997ff}
+.faq-q::after{content:'+';font-size:1.3rem;color:rgba(245,245,247,.3);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg);color:#2997ff}
+.faq-a{
+max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.25,1,.5,1),padding .4s;
+padding:0 0;
+}
+.faq-item.open .faq-a{max-height:200px;padding:0 0 24px}
+.faq-a p{font-size:.9rem;color:rgba(245,245,247,.45);line-height:1.7;font-weight:300}
+.testimonials{padding:180px 0;text-align:center;position:relative;border-top:1px solid rgba(255,255,255,.05)}
+.testimonials::before{
+content:'\201C';position:absolute;
+top:110px;left:50%;transform:translateX(-50%);
+font-size:10rem;font-family:'Instrument Serif',serif;
+background:linear-gradient(135deg,#EA4494,#159DE6);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+opacity:.08;line-height:1;pointer-events:none;
+}
+.testimonial-slide{
+max-width:760px;margin:0 auto;padding:0 max(24px,5vw);
+transition:opacity .6s,transform .6s;
+}
+.testimonial-slide.fading{opacity:0;transform:translateY(8px)}
+.testimonial-text{
+font-family:'Instrument Serif',serif;font-style:italic;
+font-size:clamp(1.3rem,3vw,2.2rem);
+line-height:1.5;color:rgba(245,245,247,.65);
+margin-bottom:28px;
+}
+.testimonial-by{font-size:.82rem;color:rgba(245,245,247,.3)}
+.testimonial-by strong{color:rgba(245,245,247,.6);font-weight:600}
+.testimonial-dots{display:flex;gap:6px;justify-content:center;margin-top:32px}
+.testimonial-dots span{
+width:6px;height:6px;border-radius:50%;
+background:rgba(245,245,247,.15);transition:all .3s;cursor:pointer;
+}
+.testimonial-dots span.active{background:rgba(245,245,247,.5)}
+.final{
+padding:180px 0;text-align:center;position:relative;overflow:hidden;
+}
+.final::before{
+content:'';position:absolute;
+bottom:0;left:50%;transform:translateX(-50%);width:min(1000px,120vw);height:500px;
+background:radial-gradient(ellipse at 50% 100%,rgba(234,68,148,.06),transparent 55%);
+pointer-events:none;
+}
+.final h2{
+font-size:clamp(2.2rem,5.5vw,4.2rem);
+font-weight:900;letter-spacing:-.045em;line-height:.95;
+margin-bottom:16px;position:relative;
+}
+.final .sub{
+font-size:1.05rem;color:rgba(245,245,247,.35);font-weight:300;
+margin-bottom:44px;position:relative;
+}
+.final-cta-row{
+display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;
+position:relative;
+}
+.rasheid-link{
+display:inline-flex;align-items:center;gap:10px;
+color:#2997ff;text-decoration:none;font-size:.9rem;font-weight:500;
+transition:all .25s;
+}
+.rasheid-link:hover{color:#6cb8f7}
+.rasheid-img{
+width:36px;height:36px;border-radius:50%;
+background:linear-gradient(135deg,#EA4494,#159DE6);
+display:flex;align-items:center;justify-content:center;
+font-size:.7rem;font-weight:700;color:#fff;
+flex-shrink:0;
+}
+.footer{border-top:1px solid rgba(255,255,255,.06);padding:0;background:#000}
+.footer-inner{max-width:1080px;margin:0 auto;padding:0 max(24px,5vw)}
+.footer-top{
+display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+gap:32px;padding:36px 0;
+border-bottom:1px solid rgba(255,255,255,.04);
+}
+.footer-top h4{font-size:.65rem;color:rgba(245,245,247,.25);font-weight:600;margin-bottom:12px;letter-spacing:.06em;text-transform:uppercase}
+.footer-top a{display:block;font-size:.78rem;color:rgba(245,245,247,.4);text-decoration:none;padding:3px 0;transition:color .2s}
+.footer-top a:hover{color:#f5f5f7}
+.footer-tagline{font-size:.78rem;color:rgba(245,245,247,.35);line-height:1.65;max-width:260px}
+.footer-logos{
+display:flex;gap:32px;align-items:center;
+padding:20px 0;
+border-bottom:1px solid rgba(255,255,255,.04);
+}
+.footer-logos span{font-size:.72rem;color:rgba(245,245,247,.12);font-weight:600;letter-spacing:.02em}
+.footer-bottom{
+display:flex;justify-content:space-between;align-items:center;
+padding:16px 0;font-size:.68rem;color:rgba(245,245,247,.2);
+}
+.r{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.25,1,.5,1),transform .8s cubic-bezier(.25,1,.5,1)}
+.r.v{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
+@media(max-width:1024px){
+.scene-inner{grid-template-columns:1fr;gap:48px}
+.scene-visual{max-width:420px;margin:0 auto}
+.pricing-grid{grid-template-columns:1fr 1fr}
+.footer-top{grid-template-columns:1fr 1fr}
+.audit-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:768px){
+.nav-links a:not(.nav-cta-btn){display:none}
+.pricing-grid{grid-template-columns:1fr}
+.footer-top{grid-template-columns:1fr}
+.scene{min-height:auto;padding:100px 0}
+.pinned-stats{height:200vh}
+.cases-pinned{height:300vh}
+.footer-logos{flex-wrap:wrap;gap:20px}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+<div class="nav-inner">
+<a href="/" class="nav-logo">NetAesthetics</a>
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#work">Work</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="nav-cta-btn">Get Free AI Audit</a>
+</div>
+</div>
+</nav>
+<section class="hero">
+<video class="hero-video-bg" autoplay muted loop playsinline>
+<source src="videos/hero-loop.webm" type="video/webm">
+</video>
+<div class="hero-sweep"></div>
+<div class="particles" id="particles"></div>
+<div class="hero-content">
+<p class="hero-eyebrow">AI Strategy & Implementation</p>
+<h1>We help companies turn <span class="glow">AI</span> into real results.</h1>
+<p class="hero-sub">We help growth companies with $5M to $50M in revenue add AI to their software, automate their operations, and grow faster. No in-house AI team needed.</p>
+<p class="hero-proof">Government-grade security · Clients average 340% return on investment · Zero data breaches in 20 years</p>
+<div class="hero-buttons">
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="btn-blue">Get Your Free AI Growth Audit</a>
+<a href="#work" class="btn-film">
+<svg viewBox="0 0 20 20"><polygon points="5,3 17,10 5,17"/></svg>
+Explore case studies
+</a>
+</div>
+</div>
+<div class="scroll-hint">
+<span>Scroll</span>
+<div class="line"></div>
+</div>
+</section>
+<section class="r" style="padding:36px 0;border-top:1px solid rgba(255,255,255,.05)">
+<div style="display:flex;gap:48px;align-items:center;justify-content:center;flex-wrap:wrap;padding:0 24px">
+<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">340%</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">average return on investment</span></div>
+<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">50+</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">AI projects built and live</span></div>
+<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">6 wk</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">average time to go live</span></div>
+<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Zero</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">data breaches in 20 years</span></div>
+</div>
+</section>
+<section class="above-fold-case r" style="padding:48px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)">
+<div class="container">
+<div style="display:flex;align-items:center;gap:48px;flex-wrap:wrap">
+<div>
+<p style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#EA4494;margin-bottom:16px">Featured Result</p>
+<div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+<div><span style="display:block;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,245,247,.3);font-family:'Space Mono',monospace">Before</span><span style="color:rgba(245,245,247,.35)">20 min wait times</span></div>
+<span style="color:rgba(245,245,247,.15);font-size:1.2rem">→</span>
+<div><span style="display:block;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#2997ff;font-family:'Space Mono',monospace">After</span><span style="color:#f5f5f7">Instant check-in</span></div>
+</div>
+</div>
+<div style="display:flex;gap:32px;padding:0 32px;border-left:1px solid rgba(255,255,255,.06)">
+<div><span style="font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">$2.1M</span><br><span style="font-size:.72rem;color:rgba(245,245,247,.4)">saved per year</span></div>
+<div><span style="font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">67%</span><br><span style="font-size:.72rem;color:rgba(245,245,247,.4)">shorter wait times</span></div>
+<div><span style="font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">6 wk</span><br><span style="font-size:.72rem;color:rgba(245,245,247,.4)">to go live</span></div>
+</div>
+<div style="font-size:.72rem;color:rgba(245,245,247,.35);line-height:1.6"><strong style="color:rgba(245,245,247,.55)">Regional Healthcare Network</strong><br>12 facilities · 200+ physicians<br>AI-powered triage on Microsoft cloud</div>
+</div>
+</div>
+</section>
+<section class="r" style="padding:32px 0;border-bottom:1px solid rgba(255,255,255,.05);overflow:hidden">
+<p style="text-align:center;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,245,247,.2);margin-bottom:16px;font-family:'Space Mono',monospace">Trusted by teams at</p>
+<div style="display:flex;gap:56px;align-items:center;justify-content:center;flex-wrap:wrap;padding:0 24px">
+<span style="font-size:.88rem;font-weight:600;color:rgba(245,245,247,.18);letter-spacing:.02em">Microsoft</span>
+<span style="font-size:.88rem;font-weight:600;color:rgba(245,245,247,.18);letter-spacing:.02em">Adobe</span>
+<span style="font-size:.88rem;font-weight:600;color:rgba(245,245,247,.18);letter-spacing:.02em">AWS</span>
+<span style="font-size:.88rem;font-weight:600;color:rgba(245,245,247,.18);letter-spacing:.02em">Google</span>
+<span style="font-size:.88rem;font-weight:600;color:rgba(245,245,247,.18);letter-spacing:.02em">FirstNet Authority</span>
+</div>
+</section>
+<section class="manifesto">
+<div class="container r">
+<h2>
+Most AI consultants give you a plan <span class="dim">and wish you luck.</span><br><br>
+We actually build the thing. <span class="dim">We set it up. We teach your team how to use it.</span><br><br>
+One team handles everything. <span class="dim">No handoffs. No surprises. No excuses.</span>
+</h2>
+</div>
+</section>
+<div id="services">
+<section class="scene">
+<div class="scene-inner">
+<div class="scene-text r">
+<h3>We find your best<br>AI opportunities.</h3>
+<p>We look at how your business runs today. We figure out where AI will save you the most time and money. Then we give you a clear plan with real numbers so you can make a smart decision.</p>
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="learn">Book assessment</a>
+</div>
+<div class="scene-visual sv-1 r rd2">
+<svg class="scene-svg" viewBox="0 0 200 200" fill="none">
+<circle cx="40" cy="60" r="4" fill="rgba(234,68,148,.4)"><animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite"/></circle>
+<circle cx="160" cy="40" r="4" fill="rgba(21,157,230,.4)"><animate attributeName="r" values="4;6;4" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+<circle cx="100" cy="140" r="4" fill="rgba(155,89,208,.4)"><animate attributeName="r" values="4;6;4" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+<circle cx="60" cy="160" r="3" fill="rgba(234,68,148,.3)"><animate attributeName="r" values="3;5;3" dur="4s" repeatCount="indefinite"/></circle>
+<circle cx="150" cy="130" r="3" fill="rgba(21,157,230,.3)"><animate attributeName="r" values="3;5;3" dur="4s" begin=".7s" repeatCount="indefinite"/></circle>
+<line x1="40" y1="60" x2="160" y2="40" stroke="rgba(234,68,148,.12)" stroke-width=".5"/>
+<line x1="160" y1="40" x2="100" y2="140" stroke="rgba(21,157,230,.12)" stroke-width=".5"/>
+<line x1="100" y1="140" x2="40" y2="60" stroke="rgba(155,89,208,.12)" stroke-width=".5"/>
+<line x1="60" y1="160" x2="150" y2="130" stroke="rgba(234,68,148,.08)" stroke-width=".5"/>
+<line x1="150" y1="130" x2="160" y2="40" stroke="rgba(21,157,230,.08)" stroke-width=".5"/>
+</svg>
+<span class="visual-label">Strategy & Assessment</span>
+</div>
+</div>
+</section>
+<section class="scene">
+<div class="scene-inner">
+<div class="scene-visual sv-2 r">
+<video autoplay muted loop playsinline>
+<source src="videos/strategy-visual.webm" type="video/webm">
+</video>
+<span class="visual-label">Build & Deploy</span>
+</div>
+<div class="scene-text r rd2">
+<h3>We build it<br>and set it up.</h3>
+<p>We write the code. We connect AI to your existing software. We test everything. And we hand you a working system in 6 weeks. Other firms take 6 to 18 months for the same thing.</p>
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="learn">Book assessment</a>
+</div>
+</div>
+</section>
+<section class="scene">
+<div class="scene-inner">
+<div class="scene-text r">
+<h3>Your data stays<br>safe. Period.</h3>
+<p>Our CEO sits on the FirstNet Authority Board, the same network that protects first responders. We build every project with the same level of security used by hospitals and government agencies. 50+ projects. Zero data breaches. Ever.</p>
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="learn">Book assessment</a>
+</div>
+<div class="scene-visual sv-3 r rd2">
+<video autoplay muted loop playsinline>
+<source src="videos/security-visual.webm" type="video/webm">
+</video>
+<span class="visual-label">Security & Compliance</span>
+</div>
+</div>
+</section>
+</div>
+<section class="cases-pinned" id="work">
+<div class="cases-sticky">
+<div class="case-slide active" data-case="0">
+<div class="case-label">Healthcare · 12 Facilities · 200+ Physicians</div>
+<div class="metric">$2.1M</div>
+<div class="case-headline">Saved per year</div>
+<div style="display:flex;justify-content:center;gap:28px;margin:24px 0;font-size:.85rem;flex-wrap:wrap">
+<div style="text-align:left"><span style="display:block;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,245,247,.3);font-family:'Space Mono',monospace;margin-bottom:6px">Before</span><span style="color:rgba(245,245,247,.35)">20 min patient wait times</span><br><span style="color:rgba(245,245,247,.35)">Manual pre-visit summaries</span></div>
+<div style="color:rgba(245,245,247,.15);font-size:1.4rem;margin-top:16px">→</div>
+<div style="text-align:left"><span style="display:block;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#2997ff;font-family:'Space Mono',monospace;margin-bottom:6px">After</span><span style="color:rgba(245,245,247,.75)">Instant check-in</span><br><span style="color:rgba(245,245,247,.75)">AI summaries in seconds</span></div>
+</div>
+<cite>Michael C. — CTO, Regional Healthcare Network</cite>
+</div>
+<div class="case-slide" data-case="1">
+<div class="case-label">E-Commerce · Online Retail · Scale-Up</div>
+<div class="metric">156%</div>
+<div class="case-headline">Revenue growth</div>
+<div style="display:flex;justify-content:center;gap:28px;margin:24px 0;font-size:.85rem;flex-wrap:wrap">
+<div style="text-align:left"><span style="display:block;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,245,247,.3);font-family:'Space Mono',monospace;margin-bottom:6px">Before</span><span style="color:rgba(245,245,247,.35)">Generic recommendations</span><br><span style="color:rgba(245,245,247,.35)">Low conversion rates</span></div>
+<div style="color:rgba(245,245,247,.15);font-size:1.4rem;margin-top:16px">→</div>
+<div style="text-align:left"><span style="display:block;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#2997ff;font-family:'Space Mono',monospace;margin-bottom:6px">After</span><span style="color:rgba(245,245,247,.75)">AI-powered personalization</span><br><span style="color:rgba(245,245,247,.75)">48% conversion increase</span></div>
+</div>
+<cite>Q. Glenn — Fidelity Healthcare Group</cite>
+</div>
+<div class="case-slide" data-case="2">
+<div class="case-label">Nonprofit · Emergency Services · COVID Response</div>
+<div class="metric">$1.2M</div>
+<div class="case-headline">Raised in 90 days</div>
+<div style="display:flex;justify-content:center;gap:28px;margin:24px 0;font-size:.85rem;flex-wrap:wrap">
+<div style="text-align:left"><span style="display:block;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,245,247,.3);font-family:'Space Mono',monospace;margin-bottom:6px">Before</span><span style="color:rgba(245,245,247,.35)">No donation platform</span><br><span style="color:rgba(245,245,247,.35)">Manual donor management</span></div>
+<div style="color:rgba(245,245,247,.15);font-size:1.4rem;margin-top:16px">→</div>
+<div style="text-align:left"><span style="display:block;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#2997ff;font-family:'Space Mono',monospace;margin-bottom:6px">After</span><span style="color:rgba(245,245,247,.75)">Platform built in 12 days</span><br><span style="color:rgba(245,245,247,.75)">$1.2M raised in 90 days</span></div>
+</div>
+<cite>Sophia S. — Executive Director, Help Them Help Us</cite>
+</div>
+<div class="case-dots">
+<span class="active"></span><span></span><span></span>
+</div>
+</div>
+</section>
+<section class="testimonials">
+<div class="testimonial-slide" id="testimonial-slide">
+<p class="testimonial-text" id="tq"></p>
+<p class="testimonial-by" id="ta"></p>
+</div>
+<div class="testimonial-dots" id="testimonial-dots"></div>
+</section>
+<section class="pricing-section" id="pricing">
+<div class="pricing-header r">
+<h2>Pick your starting point.</h2>
+<p>Each option works on its own. No contracts. No hidden fees.</p>
+</div>
+<div class="pricing-link r rd1"><a href="#faq">Compare all tiers ›</a></div>
+<div class="pricing-grid">
+<div class="p-card r">
+<span class="tier">Foundation</span>
+<h3 class="name">AI Assessment</h3>
+<div class="cost">$25K</div>
+<div class="dur">2 weeks</div>
+<ul>
+<li>We find where AI can help your business most</li>
+<li>We show you how much money you could save or make</li>
+<li>We check if your current software is ready for AI</li>
+<li>No commitment to keep going after this</li>
+</ul>
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="p-btn">Get started</a>
+</div>
+<div class="p-card pop r rd1">
+<div class="p-badge">Most Popular</div>
+<span class="tier">Strategic</span>
+<h3 class="name">AI Strategy</h3>
+<div class="cost">$49.5K</div>
+<div class="dur">6 weeks</div>
+<ul>
+<li>A complete step-by-step plan to add AI</li>
+<li>Exactly what to build first, second, and third</li>
+<li>How to avoid common mistakes that waste money</li>
+<li>What your competitors are doing with AI (and how to do it better)</li>
+</ul>
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="p-btn">Get started</a>
+</div>
+<div class="p-card r rd2">
+<span class="tier">Comprehensive</span>
+<h3 class="name">Implementation</h3>
+<div class="cost">$175K<span style="font-size:.85rem;opacity:.4">+</span></div>
+<div class="dur">6+ months</div>
+<ul>
+<li>We build the AI and connect it to your software</li>
+<li>Your data stays protected at every step</li>
+<li>Everything works with the tools you already use</li>
+<li>We train your team so they can run it without us</li>
+</ul>
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="p-btn">Get started</a>
+</div>
+<div class="p-card r rd3">
+<span class="tier">Enterprise</span>
+<h3 class="name">Custom Solutions</h3>
+<div class="cost">Custom</div>
+<div class="dur">6–12 months</div>
+<ul>
+<li>AI that works across all your software and tools</li>
+<li>We track the results and report back monthly</li>
+<li>A team dedicated to your project full-time</li>
+<li>We keep improving it as your business grows</li>
+</ul>
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="p-btn">Contact us</a>
+</div>
+</div>
+<div class="audit-callout r rd2">
+<div class="audit-inner">
+<div class="audit-left">Not sure where to start?</div>
+<div class="audit-right">
+<div class="audit-desc">
+<strong>AI Opportunity Audit</strong> — In just 1 week, we look at your business and tell you exactly where AI will save you the most time and money.
+<span class="audit-price">$9,500</span>
+</div>
+<a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="audit-link">Book audit ›</a>
+</div>
+</div>
+</div>
+</section>
+<section class="faq-section" id="faq">
+<div class="faq-header r"><h2>Everything you need to know.</h2></div>
+<div class="faq-list">
+<div class="faq-item r">
+<div class="faq-q">How much does AI implementation cost?</div>
+<div class="faq-a"><p>We have options for different budgets. You can start with a 1-week AI Opportunity Audit for $9,500. Our 2-week AI Assessment is $25,000. A full 6-week AI Strategy is $49,500. And if you want us to build and launch the whole thing, that starts at $175,000. Each one gives you real results on its own. You never have to buy the next one if you don't want to.</p></div>
+</div>
+<div class="faq-item r rd1">
+<div class="faq-q">How are you different from other AI consultants?</div>
+<div class="faq-a"><p>Most AI consultants just give you advice. They write a report and leave. We're different because we actually build the thing. We write the code, set it up, connect it to your software, and teach your team how to use it. Our CEO also sits on the FirstNet Authority Board, so we build everything with the same security standards used by hospitals and the federal government.</p></div>
+</div>
+<div class="faq-item r rd2">
+<div class="faq-q">How long does implementation take?</div>
+<div class="faq-a"><p>Most of our projects go from "let's start" to "it's live and working" in about 6 weeks. Most other firms take 6 to 18 months for the same work. If you just want to find out where AI can help, our 1-week Audit gives you that answer fast. We move quickly because we've done this over 50 times.</p></div>
+</div>
+<div class="faq-item r rd3">
+<div class="faq-q">Do you require long-term commitments?</div>
+<div class="faq-a"><p>No. You can stop after any step. Most people start small with our 1-week Audit or 2-week Assessment to see if we're a good fit. If you like the results, we keep going. If not, you walk away with useful answers and owe us nothing more. We earn your trust before we ask for a bigger commitment.</p></div>
+</div>
+</div>
+</section>
+<section class="final" id="contact">
+<h2 class="r">Ready to turn <span style="background:linear-gradient(90deg,#EA4494,#9B59D0,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI</span> into real results?</h2>
+<p class="sub r rd1">Book a free 60-minute call. We'll look at your business together and tell you exactly where AI can help. No sales pitch. Just honest answers.</p>
+<div class="r rd2" style="max-width:440px;margin:48px auto 0">
+<div style="display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:32px">
+<div class="ms-dot active" id="sd1" style="width:28px;height:28px;border-radius:50%;background:#2997ff;border:1px solid #2997ff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;color:#fff;transition:all .3s"><span>1</span></div>
+<div class="ms-line" id="sl1" style="width:48px;height:1px;background:#2997ff;transition:background .3s"></div>
+<div class="ms-dot" id="sd2" style="width:28px;height:28px;border-radius:50%;background:rgba(245,245,247,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;color:rgba(245,245,247,.3);transition:all .3s"><span>2</span></div>
+<div class="ms-line" id="sl2" style="width:48px;height:1px;background:rgba(255,255,255,.08);transition:background .3s"></div>
+<div class="ms-dot" id="sd3" style="width:28px;height:28px;border-radius:50%;background:rgba(245,245,247,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;color:rgba(245,245,247,.3);transition:all .3s"><span>3</span></div>
+</div>
+<div id="fs1"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Let's start with the basics.</p><div style="margin-bottom:14px"><input type="text" placeholder="Your name" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none"></div><div style="margin-bottom:14px"><input type="email" placeholder="Work email" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none"></div><button onclick="msGo(2)" class="btn-blue" style="width:100%;border:none;cursor:pointer;font-family:Inter,sans-serif">Continue</button></div>
+<div id="fs2" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Tell us about your company.</p><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;cursor:pointer"><option disabled selected>Company size</option><option>1-10 employees</option><option>11-50 employees</option><option>51-200 employees</option><option>201-1000 employees</option><option>1000+ employees</option></select></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;cursor:pointer"><option disabled selected>What are you looking for?</option><option>Add AI to our existing software</option><option>Build a new AI-powered app</option><option>Automate our business processes</option><option>Not sure yet</option></select></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;cursor:pointer"><option disabled selected>Budget range</option><option>Under $10K</option><option>$10K-$25K</option><option>$25K-$50K</option><option>$50K-$175K</option><option>$175K+</option><option>Not sure yet</option></select></div><div style="display:flex;gap:12px"><button onclick="msGo(1)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><button onclick="msGo(3)" class="btn-blue" style="flex:1;border:none;cursor:pointer;font-family:Inter,sans-serif">Continue</button></div></div>
+<div id="fs3" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Almost done.</p><div style="margin-bottom:14px"><textarea placeholder="Tell us about your project or challenge (optional)" rows="3" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none;resize:vertical"></textarea></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;cursor:pointer"><option disabled selected>When do you want to start?</option><option>As soon as possible</option><option>Within 1 month</option><option>Within 3 months</option><option>Just exploring</option></select></div><div style="display:flex;gap:12px"><button onclick="msGo(2)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="btn-blue" style="flex:1;text-align:center;text-decoration:none;border:none;font-family:Inter,sans-serif;display:block;padding:15px">Book Your AI Growth Audit</a></div></div>
+</div>
+<div class="r rd3" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:32px;flex-wrap:wrap">
+<span style="font-size:.82rem;color:rgba(245,245,247,.25)">Or skip the form:</span>
+<a href="https://meetings.hubspot.com/rscarlett" class="rasheid-link"><div class="rasheid-img">RS</div>Talk to Rasheid directly</a>
+</div>
+</section>
+<div class="footer">
+<div class="footer-inner">
+<div class="footer-logos">
+<span>Microsoft</span><span>Adobe</span><span>AWS</span><span>Google</span><span>FirstNet Authority</span>
+</div>
+<div class="footer-top">
+<div>
+<h4>NetAesthetics</h4>
+<p class="footer-tagline">We build AI into your business. Trusted by companies across healthcare, e-commerce, and government.<br>Washington, DC</p>
+</div>
+<div>
+<h4>Company</h4>
+<a href="#">What We Do</a>
+<a href="#">How It Works</a>
+<a href="#">Case Studies</a>
+<a href="#">About</a>
+</div>
+<div>
+<h4>Legal</h4>
+<a href="#">Terms</a>
+<a href="#">Privacy</a>
+<a href="#">Cookie Policy</a>
+</div>
+<div>
+<h4>Contact</h4>
+<a href="mailto:solutions@netaesthetics.com">solutions@netaesthetics.com</a>
+<a href="tel:+12026008034">+1 (202) 600-8034</a>
+<a href="#">2001 L St NW, Ste 500</a>
+<a href="#">Washington, DC 20036</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 NetAesthetics LLC. All rights reserved.</span>
+<span>SSL Secured · GDPR Compliant</span>
+</div>
+</div>
+</div>
+<script>
+(function(){
+const c=document.getElementById('particles');
+for(let i=0;i<18;i++){
+const p=document.createElement('div');
+p.className='particle';
+p.style.left=Math.random()*100+'%';
+p.style.top=(60+Math.random()*40)+'%';
+p.style.animationDuration=(12+Math.random()*18)+'s';
+p.style.animationDelay=(Math.random()*12)+'s';
+p.style.width=p.style.height=(1+Math.random()*1.5)+'px';
+c.appendChild(p);
+}
+})();
+window.addEventListener('scroll',()=>{
+document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+const revs=document.querySelectorAll('.r');
+const rObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');rObs.unobserve(e.target)}}); },{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+revs.forEach(el=>rObs.observe(el));
+const statsData=[
+{num:'340%',desc:'Our clients make back 3.4x what they spend with us'},
+{num:'50+',desc:'AI projects built and running in production'},
+{num:'6 wk',desc:'Average deployment — not 6 months'},
+{num:'Zero',desc:'Data breaches. In 20 years. Not one.'},
+];
+const pinnedEl=document.querySelector('.pinned-stats');
+const statNum=document.getElementById('stat-num');
+const statDesc=document.getElementById('stat-desc');
+const statDisplay=document.getElementById('stat-display');
+let lastSI=-1;
+function updateStats(){
+if(!pinnedEl)return;
+const r=pinnedEl.getBoundingClientRect();
+const s=-r.top,t=pinnedEl.offsetHeight-window.innerHeight;
+const p=Math.max(0,Math.min(1,s/t));
+const i=Math.min(Math.floor(p*statsData.length),statsData.length-1);
+if(i!==lastSI&&i>=0){
+statDisplay.style.opacity='0';statDisplay.style.transform='translateY(10px)';
+setTimeout(()=>{
+statNum.textContent=statsData[i].num;
+statDesc.textContent=statsData[i].desc;
+statDisplay.style.opacity='1';statDisplay.style.transform='none';
+},220);
+lastSI=i;
+}
+}
+const casePinned=document.querySelector('.cases-pinned');
+const caseSlides=document.querySelectorAll('.case-slide');
+const caseDots=document.querySelectorAll('.case-dots span');
+let lastCI=-1;
+function updateCases(){
+if(!casePinned)return;
+const r=casePinned.getBoundingClientRect();
+const s=-r.top,t=casePinned.offsetHeight-window.innerHeight;
+const p=Math.max(0,Math.min(.99,s/t));
+const i=Math.min(Math.floor(p*caseSlides.length),caseSlides.length-1);
+if(i!==lastCI&&i>=0){
+caseSlides.forEach((sl,j)=>sl.classList.toggle('active',j===i));
+caseDots.forEach((d,j)=>d.classList.toggle('active',j===i));
+lastCI=i;
+}
+}
+let ticking=false;
+window.addEventListener('scroll',()=>{
+if(!ticking){requestAnimationFrame(()=>{updateStats();updateCases();ticking=false});ticking=true}
+},{passive:true});
+updateStats();updateCases();
+document.querySelectorAll('.faq-q').forEach(q=>{
+q.addEventListener('click',()=>{
+const item=q.parentElement;
+const wasOpen=item.classList.contains('open');
+document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+if(!wasOpen)item.classList.add('open');
+});
+});
+const testimonials=[
+{q:"NetAesthetics cut our student assessment time from 3 months to 1 week. 6,000 students checked for mental health risks. What used to take an entire semester now happens in days.",a:"<strong>Q. Glenn</strong> — CEO, Fidelity Healthcare Group"},
+{q:"They delivered on time and on budget. Quality was high. Communication was the best we've had with any tech team. We'd hire them again tomorrow.",a:"<strong>D. Kitts</strong> — Client"},
+{q:"Our e-commerce revenue went up 156% after their AI work. They found blind spots we didn't even know we had. Professional from start to finish.",a:"<strong>A. Anwekar</strong> — Amazon Seller Central"},
+];
+const tqEl=document.getElementById('tq');
+const taEl=document.getElementById('ta');
+const tdots=document.getElementById('testimonial-dots');
+const tslide=document.getElementById('testimonial-slide');
+let tIdx=0;
+testimonials.forEach((_,i)=>{
+const d=document.createElement('span');
+if(i===0)d.classList.add('active');
+d.addEventListener('click',()=>{tIdx=i;showTestimonial(i)});
+tdots.appendChild(d);
+});
+function showTestimonial(i){
+tslide.classList.add('fading');
+setTimeout(()=>{
+tqEl.textContent=testimonials[i].q;
+taEl.innerHTML=testimonials[i].a;
+tdots.querySelectorAll('span').forEach((d,j)=>d.classList.toggle('active',j===i));
+tslide.classList.remove('fading');
+},400);
+}
+showTestimonial(0);
+setInterval(()=>{tIdx=(tIdx+1)%testimonials.length;showTestimonial(tIdx)},8000);
+function msGo(n){
+document.getElementById('fs1').style.display=n===1?'block':'none';
+document.getElementById('fs2').style.display=n===2?'block':'none';
+document.getElementById('fs3').style.display=n===3?'block':'none';
+['sd1','sd2','sd3'].forEach((id,i)=>{const d=document.getElementById(id);d.style.background=i+1===n?'#2997ff':i+1<n?'rgba(41,151,255,.15)':'rgba(245,245,247,.06)';d.style.borderColor=i+1<=n?'#2997ff':'rgba(255,255,255,.1)';d.style.color=i+1===n?'#fff':i+1<n?'#2997ff':'rgba(245,245,247,.3)';}); 
+['sl1','sl2'].forEach((id,i)=>{document.getElementById(id).style.background=i<n-1?'#2997ff':'rgba(255,255,255,.08)';}); 
+}
+</script>
+</body>
+</html>
