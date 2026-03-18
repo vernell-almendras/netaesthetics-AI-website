@@ -9,9 +9,11 @@
 <meta property="og:description" content="Strategy through deployment in 6 weeks. Government-grade security. Proven 340% average ROI across 50+ implementations.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://netaesthetics.com">
+<meta name="theme-color" content="#000000">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="favicon.svg" as="image">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
@@ -170,7 +172,7 @@ opacity:0;animation:si .8s .3s forwards;
 }
 .hero h1 .glow{
 background:linear-gradient(90deg,#EA4494,#9B59D0,#159DE6);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 background-size:200% 100%;
 animation:si .8s .3s forwards, shimmer 8s ease-in-out infinite;
 }
@@ -230,6 +232,9 @@ animation:scrollPulse 2.5s ease-in-out infinite;
 }
 @keyframes scrollPulse{0%,100%{opacity:.25;transform:scaleY(.65)}50%{opacity:.75;transform:scaleY(1)}}
 @keyframes si{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:0.001ms!important;animation-iteration-count:1!important;transition-duration:0.001ms!important;scroll-behavior:auto!important}
+}
 .pinned-stats{display:none}
 .pinned-stats-sticky{
 position:sticky;top:0;
@@ -242,7 +247,7 @@ overflow:hidden;
 font-size:clamp(5rem,18vw,13rem);
 font-weight:900;letter-spacing:-.06em;line-height:.85;
 background:linear-gradient(135deg,#EA4494,#159DE6);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .stat-desc{
 font-size:clamp(.95rem,1.8vw,1.3rem);
@@ -336,7 +341,7 @@ color:#EA4494;margin-bottom:20px;
 font-size:clamp(4rem,13vw,9rem);font-weight:900;
 letter-spacing:-.06em;line-height:.85;
 background:linear-gradient(135deg,#EA4494,#9B59D0,#159DE6);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 margin-bottom:16px;
 }
 .case-slide .case-headline{
@@ -415,7 +420,7 @@ letter-spacing:.12em;text-transform:uppercase;
 .p-card .cost{font-family:'Space Mono',monospace;font-size:2.1rem;font-weight:700;margin-bottom:2px}
 .p-card.pop .cost{
 background:linear-gradient(135deg,#EA4494,#159DE6);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .p-card .dur{font-size:.78rem;color:rgba(245,245,247,.3);margin-bottom:28px}
 .p-card ul{list-style:none;flex:1;margin-bottom:28px}
@@ -469,7 +474,7 @@ content:'\201C';position:absolute;
 top:110px;left:50%;transform:translateX(-50%);
 font-size:10rem;font-family:'Instrument Serif',serif;
 background:linear-gradient(135deg,#EA4494,#159DE6);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 opacity:.08;line-height:1;pointer-events:none;
 }
 .testimonial-slide{
@@ -582,7 +587,7 @@ padding:16px 0;font-size:.68rem;color:rgba(245,245,247,.2);
 </div>
 </nav>
 <section class="hero">
-<video class="hero-video-bg" autoplay muted loop playsinline>
+<video class="hero-video-bg" autoplay muted loop playsinline preload="none" width="1920" height="1080" poster="favicon.svg">
 <source src="videos/hero-loop.webm" type="video/webm">
 </video>
 <div class="hero-sweep"></div>
@@ -607,10 +612,10 @@ Explore case studies
 </section>
 <section class="r" style="padding:36px 0;border-top:1px solid rgba(255,255,255,.05)">
 <div style="display:flex;gap:48px;align-items:center;justify-content:center;flex-wrap:wrap;padding:0 24px">
-<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">340%</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">average return on investment</span></div>
-<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">50+</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">AI projects built and live</span></div>
-<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">6 wk</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">average time to go live</span></div>
-<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Zero</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">data breaches in 20 years</span></div>
+<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">340%</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">average return on investment</span></div>
+<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">50+</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">AI projects built and live</span></div>
+<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">6 wk</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">average time to go live</span></div>
+<div style="text-align:center"><span style="font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Zero</span><br><span style="font-size:.7rem;color:rgba(245,245,247,.35)">data breaches in 20 years</span></div>
 </div>
 </section>
 <section class="above-fold-case r" style="padding:48px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)">
@@ -625,9 +630,9 @@ Explore case studies
 </div>
 </div>
 <div style="display:flex;gap:32px;padding:0 32px;border-left:1px solid rgba(255,255,255,.06)">
-<div><span style="font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">$2.1M</span><br><span style="font-size:.72rem;color:rgba(245,245,247,.4)">saved per year</span></div>
-<div><span style="font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">67%</span><br><span style="font-size:.72rem;color:rgba(245,245,247,.4)">shorter wait times</span></div>
-<div><span style="font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">6 wk</span><br><span style="font-size:.72rem;color:rgba(245,245,247,.4)">to go live</span></div>
+<div><span style="font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">$2.1M</span><br><span style="font-size:.72rem;color:rgba(245,245,247,.4)">saved per year</span></div>
+<div><span style="font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">67%</span><br><span style="font-size:.72rem;color:rgba(245,245,247,.4)">shorter wait times</span></div>
+<div><span style="font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#EA4494,#159DE6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">6 wk</span><br><span style="font-size:.72rem;color:rgba(245,245,247,.4)">to go live</span></div>
 </div>
 <div style="font-size:.72rem;color:rgba(245,245,247,.35);line-height:1.6"><strong style="color:rgba(245,245,247,.55)">Regional Healthcare Network</strong><br>12 facilities · 200+ physicians<br>AI-powered triage on Microsoft cloud</div>
 </div>
@@ -680,7 +685,7 @@ One team handles everything. <span class="dim">No handoffs. No surprises. No exc
 <section class="scene">
 <div class="scene-inner">
 <div class="scene-visual sv-2 r">
-<video autoplay muted loop playsinline>
+<video autoplay muted loop playsinline preload="none" width="1280" height="720" poster="favicon.svg">
 <source src="videos/strategy-visual.webm" type="video/webm">
 </video>
 <span class="visual-label">Build & Deploy</span>
@@ -700,7 +705,7 @@ One team handles everything. <span class="dim">No handoffs. No surprises. No exc
 <a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="learn">Book assessment</a>
 </div>
 <div class="scene-visual sv-3 r rd2">
-<video autoplay muted loop playsinline>
+<video autoplay muted loop playsinline preload="none" width="1280" height="720" poster="favicon.svg">
 <source src="videos/security-visual.webm" type="video/webm">
 </video>
 <span class="visual-label">Security & Compliance</span>
@@ -851,7 +856,7 @@ One team handles everything. <span class="dim">No handoffs. No surprises. No exc
 </div>
 </section>
 <section class="final" id="contact">
-<h2 class="r">Ready to turn <span style="background:linear-gradient(90deg,#EA4494,#9B59D0,#159DE6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI</span> into real results?</h2>
+<h2 class="r">Ready to turn <span style="background:linear-gradient(90deg,#EA4494,#9B59D0,#159DE6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI</span> into real results?</h2>
 <p class="sub r rd1">Book a free 60-minute call. We'll look at your business together and tell you exactly where AI can help. No sales pitch. Just honest answers.</p>
 <div class="r rd2" style="max-width:440px;margin:48px auto 0">
 <div style="display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:32px">
@@ -862,8 +867,8 @@ One team handles everything. <span class="dim">No handoffs. No surprises. No exc
 <div class="ms-dot" id="sd3" style="width:28px;height:28px;border-radius:50%;background:rgba(245,245,247,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;color:rgba(245,245,247,.3);transition:all .3s"><span>3</span></div>
 </div>
 <div id="fs1"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Let's start with the basics.</p><div style="margin-bottom:14px"><input type="text" placeholder="Your name" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none"></div><div style="margin-bottom:14px"><input type="email" placeholder="Work email" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none"></div><button onclick="msGo(2)" class="btn-blue" style="width:100%;border:none;cursor:pointer;font-family:Inter,sans-serif">Continue</button></div>
-<div id="fs2" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Tell us about your company.</p><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;cursor:pointer"><option disabled selected>Company size</option><option>1-10 employees</option><option>11-50 employees</option><option>51-200 employees</option><option>201-1000 employees</option><option>1000+ employees</option></select></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;cursor:pointer"><option disabled selected>What are you looking for?</option><option>Add AI to our existing software</option><option>Build a new AI-powered app</option><option>Automate our business processes</option><option>Not sure yet</option></select></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;cursor:pointer"><option disabled selected>Budget range</option><option>Under $10K</option><option>$10K-$25K</option><option>$25K-$50K</option><option>$50K-$175K</option><option>$175K+</option><option>Not sure yet</option></select></div><div style="display:flex;gap:12px"><button onclick="msGo(1)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><button onclick="msGo(3)" class="btn-blue" style="flex:1;border:none;cursor:pointer;font-family:Inter,sans-serif">Continue</button></div></div>
-<div id="fs3" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Almost done.</p><div style="margin-bottom:14px"><textarea placeholder="Tell us about your project or challenge (optional)" rows="3" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none;resize:vertical"></textarea></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;cursor:pointer"><option disabled selected>When do you want to start?</option><option>As soon as possible</option><option>Within 1 month</option><option>Within 3 months</option><option>Just exploring</option></select></div><div style="display:flex;gap:12px"><button onclick="msGo(2)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="btn-blue" style="flex:1;text-align:center;text-decoration:none;border:none;font-family:Inter,sans-serif;display:block;padding:15px">Book Your AI Growth Audit</a></div></div>
+<div id="fs2" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Tell us about your company.</p><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option disabled selected>Company size</option><option>1-10 employees</option><option>11-50 employees</option><option>51-200 employees</option><option>201-1000 employees</option><option>1000+ employees</option></select></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option disabled selected>What are you looking for?</option><option>Add AI to our existing software</option><option>Build a new AI-powered app</option><option>Automate our business processes</option><option>Not sure yet</option></select></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option disabled selected>Budget range</option><option>Under $10K</option><option>$10K-$25K</option><option>$25K-$50K</option><option>$50K-$175K</option><option>$175K+</option><option>Not sure yet</option></select></div><div style="display:flex;gap:12px"><button onclick="msGo(1)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><button onclick="msGo(3)" class="btn-blue" style="flex:1;border:none;cursor:pointer;font-family:Inter,sans-serif">Continue</button></div></div>
+<div id="fs3" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Almost done.</p><div style="margin-bottom:14px"><textarea placeholder="Tell us about your project or challenge (optional)" rows="3" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none;resize:vertical"></textarea></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option disabled selected>When do you want to start?</option><option>As soon as possible</option><option>Within 1 month</option><option>Within 3 months</option><option>Just exploring</option></select></div><div style="display:flex;gap:12px"><button onclick="msGo(2)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="btn-blue" style="flex:1;text-align:center;text-decoration:none;border:none;font-family:Inter,sans-serif;display:block;padding:15px">Book Your AI Growth Audit</a></div></div>
 </div>
 <div class="r rd3" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:32px;flex-wrap:wrap">
 <span style="font-size:.82rem;color:rgba(245,245,247,.25)">Or skip the form:</span>

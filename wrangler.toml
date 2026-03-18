@@ -1,0 +1,10 @@
+name = "neta-ai"
+main = "worker.js"
+account_id = "009cd5229a70b651567d896ff8a1288f"
+workers_dev = true
+compatibility_date = "2026-03-18"
+
+[site]
+  bucket = "."
+  include = ["**/*"]
+  exclude = ["**/.git/**", "**/node_modules/**", "**/.github/**", "**/*.map"]
