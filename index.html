@@ -868,9 +868,21 @@ One team handles everything. <span class="dim">No handoffs. No surprises. No exc
 <div class="ms-line" id="sl2" style="width:48px;height:1px;background:rgba(255,255,255,.08);transition:background .3s"></div>
 <div class="ms-dot" id="sd3" style="width:28px;height:28px;border-radius:50%;background:rgba(245,245,247,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;color:rgba(245,245,247,.3);transition:all .3s"><span>3</span></div>
 </div>
-<div id="fs1"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Let's start with the basics.</p><div style="margin-bottom:14px"><input type="text" placeholder="Your name" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none"></div><div style="margin-bottom:14px"><input type="email" placeholder="Work email" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none"></div><button onclick="msGo(2)" class="btn-blue" style="width:100%;border:none;cursor:pointer;font-family:Inter,sans-serif">Continue</button></div>
-<div id="fs2" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Tell us about your company.</p><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option disabled selected>Company size</option><option>1-10 employees</option><option>11-50 employees</option><option>51-200 employees</option><option>201-1000 employees</option><option>1000+ employees</option></select></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option disabled selected>What are you looking for?</option><option>Add AI to our existing software</option><option>Build a new AI-powered app</option><option>Automate our business processes</option><option>Not sure yet</option></select></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option disabled selected>Budget range</option><option>Under $10K</option><option>$10K-$25K</option><option>$25K-$50K</option><option>$50K-$175K</option><option>$175K+</option><option>Not sure yet</option></select></div><div style="display:flex;gap:12px"><button onclick="msGo(1)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><button onclick="msGo(3)" class="btn-blue" style="flex:1;border:none;cursor:pointer;font-family:Inter,sans-serif">Continue</button></div></div>
-<div id="fs3" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Almost done.</p><div style="margin-bottom:14px"><textarea placeholder="Tell us about your project or challenge (optional)" rows="3" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none;resize:vertical"></textarea></div><div style="margin-bottom:14px"><select style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option disabled selected>When do you want to start?</option><option>As soon as possible</option><option>Within 1 month</option><option>Within 3 months</option><option>Just exploring</option></select></div><div style="display:flex;gap:12px"><button onclick="msGo(2)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><a href="https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation" class="btn-blue" style="flex:1;text-align:center;text-decoration:none;border:none;font-family:Inter,sans-serif;display:block;padding:15px">Book Your AI Growth Audit</a></div></div>
+<div id="fs1"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Let's start with the basics.</p>
+<!-- Honeypot — hidden from real users, filled by bots -->
+<input type="text" id="hp_field" name="website" style="display:none;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off">
+<div style="margin-bottom:14px"><input type="text" id="inp_name" placeholder="Your name" autocomplete="given-name" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none"></div><div style="margin-bottom:14px"><input type="email" id="inp_email" placeholder="Work email" autocomplete="email" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none"></div>
+<div id="err_s1" style="display:none;color:#ff4d4d;font-size:.82rem;padding:10px 14px;background:rgba(255,77,77,.08);border-radius:10px;margin:10px 0 14px;text-align:left;line-height:1.4"></div>
+<button type="button" onclick="msGo(2)" class="btn-blue" style="width:100%;border:none;cursor:pointer;font-family:Inter,sans-serif;margin-top:4px">Continue</button></div>
+<div id="fs2" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Tell us about your company.</p><div style="margin-bottom:14px"><select id="sel_size" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option value="" disabled selected>Company size</option><option value="1-10 employees">1-10 employees</option><option value="11-50 employees">11-50 employees</option><option value="51-200 employees">51-200 employees</option><option value="201-1000 employees">201-1000 employees</option><option value="1000+ employees">1000+ employees</option></select></div><div style="margin-bottom:14px"><select id="sel_intent" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option value="" disabled selected>What are you looking for?</option><option value="Add AI to our existing software">Add AI to our existing software</option><option value="Build a new AI-powered app">Build a new AI-powered app</option><option value="Automate our business processes">Automate our business processes</option><option value="Not sure yet">Not sure yet</option></select></div><div style="margin-bottom:14px"><select id="sel_budget" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option value="" disabled selected>Budget range</option><option value="Under $10K">Under $10K</option><option value="$10K-$25K">$10K-$25K</option><option value="$25K-$50K">$25K-$50K</option><option value="$50K-$175K">$50K-$175K</option><option value="$175K+">$175K+</option><option value="Not sure yet">Not sure yet</option></select></div><div style="display:flex;gap:12px"><button type="button" onclick="msGo(1)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><button type="button" onclick="msGo(3)" class="btn-blue" style="flex:1;border:none;cursor:pointer;font-family:Inter,sans-serif">Continue</button></div></div>
+<div id="fs3" style="display:none"><p style="font-size:1rem;font-weight:500;color:rgba(245,245,247,.6);margin-bottom:20px;text-align:center">Almost done.</p><div style="margin-bottom:14px"><textarea placeholder="Tell us about your project or challenge (optional)" rows="3" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:#f5f5f7;font-family:Inter,sans-serif;outline:none;resize:vertical"></textarea></div><div style="margin-bottom:14px"><select id="sel_timeline" style="width:100%;background:rgba(245,245,247,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;font-size:.9rem;color:rgba(245,245,247,.5);font-family:Inter,sans-serif;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer"><option value="" disabled selected>When do you want to start?</option><option value="As soon as possible">As soon as possible</option><option value="Within 1 month">Within 1 month</option><option value="Within 3 months">Within 3 months</option><option value="Just exploring">Just exploring</option></select></div><div style="display:flex;gap:12px"><button type="button" onclick="msGo(2)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(245,245,247,.5);padding:13px;border-radius:980px;font-size:.88rem;cursor:pointer;font-family:Inter,sans-serif">Back</button><button type="button" id="btn_book" onclick="submitAndBook()" class="btn-blue" style="flex:1;border:none;cursor:pointer;font-family:Inter,sans-serif">Book Your AI Growth Audit</button></div>
+<!-- Loading state -->
+<div id="form_loading" style="display:none;color:#aaa;font-size:13px;margin-top:10px;text-align:center">Saving your details...</div>
+<!-- Error state -->
+<div id="form_error" style="display:none;color:#ff4d4d;font-size:13px;margin-top:10px;text-align:center">Something went wrong. <a href="mailto:solutions@netaesthetics.com" style="color:#ff4d4d">Email us directly</a></div>
+<!-- Success state -->
+<div id="form_success" style="display:none;color:#4dff91;font-size:13px;margin-top:10px;text-align:center">&#10003; Details saved! Opening your booking calendar...</div>
+</div>
 </div>
 <div class="r rd3" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:32px;flex-wrap:wrap">
 <span style="font-size:.82rem;color:rgba(245,245,247,.25)">Or skip the form:</span>
@@ -1017,12 +1029,115 @@ tslide.classList.remove('fading');
 }
 showTestimonial(0);
 setInterval(()=>{tIdx=(tIdx+1)%testimonials.length;showTestimonial(tIdx)},8000);
-function msGo(n){
-document.getElementById('fs1').style.display=n===1?'block':'none';
-document.getElementById('fs2').style.display=n===2?'block':'none';
-document.getElementById('fs3').style.display=n===3?'block':'none';
-['sd1','sd2','sd3'].forEach((id,i)=>{const d=document.getElementById(id);d.style.background=i+1===n?'#2997ff':i+1<n?'rgba(41,151,255,.15)':'rgba(245,245,247,.06)';d.style.borderColor=i+1<=n?'#2997ff':'rgba(255,255,255,.1)';d.style.color=i+1===n?'#fff':i+1<n?'#2997ff':'rgba(245,245,247,.3)';}); 
-['sl1','sl2'].forEach((id,i)=>{document.getElementById(id).style.background=i<n-1?'#2997ff':'rgba(255,255,255,.08)';}); 
+// —— CONFIGURATION ————————————————————————————
+const HS_PORTAL_ID = '8304436';   // e.g. '12345678'
+const HS_FORM_GUID = 'a0aae368-6733-43b3-a907-d9adf28a1740';   // e.g. 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+const BOOKING_URL  = 'https://meetings.hubspot.com/netaesthetics-solutions/ai-strategy-consultation';
+
+// —— STEP NAVIGATION ————————————————————————————
+function msGo(n) {
+  // Validate Step 1 before advancing to Step 2
+  if (n === 2) {
+    var nameEl  = document.getElementById('inp_name');
+    var emailEl = document.getElementById('inp_email');
+    var errEl   = document.getElementById('err_s1');
+    var nameVal  = nameEl  ? nameEl.value.trim()  : '';
+    var emailVal = emailEl ? emailEl.value.trim() : '';
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function showErr(msg, focusEl) {
+      if (errEl) { errEl.textContent = msg; errEl.style.display = 'block'; }
+      if (focusEl) focusEl.focus();
+    }
+
+    if (!nameVal) {
+      showErr('Please enter your name.', nameEl);
+      return;
+    }
+    if (!emailVal || !emailRegex.test(emailVal)) {
+      showErr('Please enter a valid work email address.', emailEl);
+      return;
+    }
+    if (errEl) errEl.style.display = 'none';
+  }
+
+  // Show the correct step
+  document.getElementById('fs1').style.display = n === 1 ? 'block' : 'none';
+  document.getElementById('fs2').style.display = n === 2 ? 'block' : 'none';
+  document.getElementById('fs3').style.display = n === 3 ? 'block' : 'none';
+
+  // Update step indicator dots and lines
+  ['sd1','sd2','sd3'].forEach((id, i) => {
+    const d = document.getElementById(id);
+    d.style.background  = i + 1 === n ? '#2997ff' : i + 1 < n ? 'rgba(41,151,255,.15)' : 'rgba(245,245,247,.06)';
+    d.style.borderColor = i + 1 <= n  ? '#2997ff' : 'rgba(255,255,255,.1)';
+    d.style.color       = i + 1 === n ? '#fff'    : i + 1 < n ? '#2997ff' : 'rgba(245,245,247,.3)';
+  });
+  ['sl1','sl2'].forEach((id, i) => {
+    document.getElementById(id).style.background = i < n - 1 ? '#2997ff' : 'rgba(255,255,255,.08)';
+  });
+}
+
+// —— HUBSPOT SUBMISSION + BOOKING ————————————————————————————
+async function submitAndBook() {
+  // Honeypot check — if filled, it's a bot; silently do nothing
+  if (document.getElementById('hp_field').value) return;
+
+  const name     = document.getElementById('inp_name').value.trim();
+  const email    = document.getElementById('inp_email').value.trim();
+  const size     = document.getElementById('sel_size').value;
+  const intent   = document.getElementById('sel_intent').value;
+  const budget   = document.getElementById('sel_budget').value;
+  const timeline = document.getElementById('sel_timeline').value;
+
+  const nameParts = name.split(' ');
+  const firstName = nameParts[0] || '';
+  const lastName  = nameParts.slice(1).join(' ') || '';
+
+  const btnBook    = document.getElementById('btn_book');
+  const loading    = document.getElementById('form_loading');
+  const errDiv     = document.getElementById('form_error');
+  const successDiv = document.getElementById('form_success');
+
+  btnBook.disabled         = true;
+  btnBook.textContent      = 'Saving...';
+  loading.style.display    = 'block';
+  errDiv.style.display     = 'none';
+  successDiv.style.display = 'none';
+
+  const payload = {
+    fields: [
+      { name: 'firstname',                value: firstName },
+      { name: 'lastname',                 value: lastName  },
+      { name: 'email',                    value: email     },
+      { name: 'company_size',             value: size      },
+      { name: 'what_are_you_looking_for', value: intent    },
+      { name: 'budget_range',             value: budget    },
+      { name: 'timeline',                 value: timeline  },
+    ],
+    context: { pageUri: window.location.href, pageName: document.title }
+  };
+
+  try {
+    const res = await fetch(
+      `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL_ID}/${HS_FORM_GUID}`,
+      { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }
+    );
+    if (!res.ok) throw new Error(`HubSpot responded with status ${res.status}`);
+
+    loading.style.display    = 'none';
+    successDiv.style.display = 'block';
+
+    const calParams = new URLSearchParams({ firstname: firstName, lastname: lastName, email: email });
+    setTimeout(() => { window.open(`${BOOKING_URL}?${calParams.toString()}`, '_blank'); }, 1200);
+
+  } catch (err) {
+    console.error('HubSpot submission failed:', err);
+    loading.style.display  = 'none';
+    errDiv.style.display   = 'block';
+    btnBook.disabled       = false;
+    btnBook.textContent    = 'Book Your AI Growth Audit';
+  }
 }
 
 function lazyLoadVideos(){
