@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://netaesthetics.com/</loc>
-<lastmod>2026-03-10</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://netaesthetics.ai/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <video:video>
+      <video:thumbnail_loc>https://netaesthetics.ai/favicon.svg</video:thumbnail_loc>
+      <video:title>NetAesthetics AI Implementation — Hero Background</video:title>
+      <video:description>Visual representation of AI implementation and strategy services for growth companies</video:description>
+      <video:content_loc>https://netaesthetics.ai/videos/hero-loop.webm</video:content_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://netaesthetics.ai/privacy-policy.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://netaesthetics.ai/cookie-policy.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://netaesthetics.ai/terms.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
