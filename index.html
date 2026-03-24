@@ -130,7 +130,7 @@
 <main id="main-content">
 <section class="hero" aria-label="Hero">
 <video id="hero-video" class="hero-video-bg" autoplay muted loop playsinline preload="none" width="1920" height="1080" poster="favicon.svg" aria-hidden="true">
-<source data-src="videos/hero-loop.webm" type="video/webm"><track kind="captions" src="" label="No audio" default></video>
+<source src="videos/hero-loop.webm" type="video/webm"><track kind="captions" src="" label="No audio" default></video>
 <div class="hero-sweep"></div>
 <div class="particles" id="particles"></div>
 <div class="hero-content">
@@ -228,7 +228,7 @@ One team handles everything. <span class="dim">No handoffs. No surprises. No exc
 <div class="scene-inner">
 <div class="scene-visual sv-2 r">
 <video class="scene-video" autoplay muted loop playsinline preload="none" width="1280" height="720" poster="favicon.svg" aria-hidden="true">
-<source data-src="videos/strategy-visual.webm" type="video/webm">
+<source src="videos/strategy-visual.webm" type="video/webm">
 <track kind="captions" src="" label="No audio" default></video>
 <span class="visual-label">Build & Deploy</span>
 </div>
@@ -248,7 +248,7 @@ One team handles everything. <span class="dim">No handoffs. No surprises. No exc
 </div>
 <div class="scene-visual sv-3 r rd2">
 <video class="scene-video" autoplay muted loop playsinline preload="none" width="1280" height="720" poster="favicon.svg" aria-hidden="true">
-<source data-src="videos/security-visual.webm" type="video/webm">
+<source src="videos/security-visual.webm" type="video/webm">
 <track kind="captions" src="" label="No audio" default></video>
 <span class="visual-label">Security & Compliance</span>
 </div>
@@ -477,8 +477,8 @@ if(!emailVal||!emailRegex.test(emailVal)){showErr('Please enter a valid work ema
 if(errEl)errEl.style.display='none';}
 document.getElementById('fs1').style.display=n===1?'block':'none';document.getElementById('fs2').style.display=n===2?'block':'none';document.getElementById('fs3').style.display=n===3?'block':'none';['sd1','sd2','sd3'].forEach((id,i)=>{const d=document.getElementById(id);d.style.background=i+1===n?'#2997ff':i+1<n?'rgba(41,151,255,.15)':'rgba(245,245,247,.06)';d.style.borderColor=i+1<=n?'#2997ff':'rgba(255,255,255,.1)';d.style.color=i+1===n?'#fff':i+1<n?'#2997ff':'rgba(245,245,247,.3)';});['sl1','sl2'].forEach((id,i)=>{document.getElementById(id).style.background=i<n-1?'#2997ff':'rgba(255,255,255,.08)';});}
 async function submitAndBook(){if(document.getElementById('hp_field').value)return;const name=document.getElementById('inp_name').value.trim();const email=document.getElementById('inp_email').value.trim();const size=document.getElementById('sel_size').value;const intent=document.getElementById('sel_intent').value;const budget=document.getElementById('sel_budget').value;const timeline=document.getElementById('sel_timeline').value;const nameParts=name.split(' ');const firstName=nameParts[0]||'';const lastName=nameParts.slice(1).join(' ')||'';const btnBook=document.getElementById('btn_book');const loading=document.getElementById('form_loading');const errDiv=document.getElementById('form_error');const successDiv=document.getElementById('form_success');btnBook.disabled=true;btnBook.textContent='Saving...';loading.style.display='block';errDiv.style.display='none';successDiv.style.display='none';const payload={fields:[{name:'firstname',value:firstName},{name:'lastname',value:lastName},{name:'email',value:email},{name:'company_size',value:size},{name:'what_are_you_looking_for',value:intent},{name:'budget_range',value:budget},{name:'timeline',value:timeline},],context:{pageUri:window.location.href,pageName:document.title}};try{const res=await fetch(`https:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!res.ok)throw new Error(`HubSpot responded with status ${res.status}`);loading.style.display='none';successDiv.style.display='block';const calParams=new URLSearchParams({firstname:firstName,lastname:lastName,email:email});setTimeout(()=>{window.open(`${BOOKING_URL}?${calParams.toString()}`,'_blank','noopener');},1200);}catch(err){console.error('HubSpot submission failed:',err);loading.style.display='none';errDiv.style.display='block';btnBook.disabled=false;btnBook.textContent='Book Your AI Growth Audit';}}
-function lazyLoadVideos(){document.querySelectorAll('video').forEach(video=>{video.querySelectorAll('source[data-src]').forEach(src=>{src.src=src.dataset.src;});if(video.hasAttribute('autoplay')){video.load();}});}
-window.addEventListener('load',()=>{requestAnimationFrame(()=>{setTimeout(lazyLoadVideos,250);});});</script>
+
+</script>
 <!-- Cookie Consent Banner -->
 <div id="cookieConsent" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(0,0,0,.95);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:1px solid rgba(255,255,255,.06);padding:20px 0;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif">
 <div style="max-width:1080px;margin:0 auto;padding:0 max(24px,5vw);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">

@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetAesthetics - Project Status Report: Visionary Solutions</title>
+    <style>
+        :root {
+            --navy: #1a237e;
+            --navy-light: #283593;
+            --navy-dark: #0d1452;
+            --accent: #2196f3;
+            --green: #2e7d32;
+            --green-bg: #e8f5e9;
+            --orange: #e65100;
+            --orange-bg: #fff3e0;
+            --red: #c62828;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #eeeeee;
+            --gray-300: #e0e0e0;
+            --gray-500: #9e9e9e;
+            --gray-600: #757575;
+            --gray-700: #616161;
+            --gray-800: #424242;
+            --gray-900: #212121;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.1);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--gray-100);
+            color: var(--gray-800);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+            outline: 2px solid var(--navy);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Skip Navigation */
+        .skip-nav {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            z-index: 1000;
+            background: var(--navy);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .skip-nav:focus { top: 8px; }
+
+        /* Decorative Bar */
+        .decorative-bar {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--navy-dark) 0%, var(--navy) 40%, var(--accent) 100%);
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            padding: 28px 40px;
+            border-bottom: 1px solid var(--gray-300);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.3px;
+        }
+
+        .header-left p {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin-top: 2px;
+        }
+
+        .header-right { text-align: right; }
+
+        .header-right .date {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .header-right .period {
+            font-size: 13px;
+            color: var(--gray-600);
+            margin-top: 2px;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 40px 80px;
+        }
+
+        /* Executive Summary */
+        .exec-summary {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            border-left: 4px solid var(--navy);
+        }
+
+        .exec-summary h2 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .exec-summary p {
+            font-size: 15px;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        /* Metrics Grid */
+        .metrics-section { margin-bottom: 32px; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .metric-card {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 22px 20px;
+            text-align: center;
+            border-top: 3px solid var(--gray-300);
+            transition: box-shadow var(--transition), transform var(--transition);
+        }
+
+        .metric-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+
+        .metric-card .number {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .metric-card .label {
+            font-size: 11px;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+        }
+
+        .metric-card.total { border-top-color: var(--navy); }
+        .metric-card.total .number { color: var(--navy); }
+        .metric-card.completed { border-top-color: var(--green); }
+        .metric-card.completed .number { color: var(--green); }
+        .metric-card.in-progress { border-top-color: var(--accent); }
+        .metric-card.in-progress .number { color: var(--accent); }
+        .metric-card.paused { border-top-color: var(--orange); }
+        .metric-card.paused .number { color: var(--orange); }
+
+        /* Overall Progress Bar */
+        .overall-progress {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .overall-progress .op-label {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--gray-600);
+            white-space: nowrap;
+        }
+
+        .overall-progress .op-bar {
+            flex: 1;
+            height: 10px;
+            background: var(--gray-200);
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .overall-progress .op-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--green) 0%, var(--accent) 100%);
+            border-radius: 5px;
+            transition: width 0.6s ease;
+        }
+
+        .overall-progress .op-percent {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--navy);
+            min-width: 50px;
+            text-align: right;
+        }
+
+        /* Decisions Callout */
+        .decisions-callout {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: var(--radius-md);
+            padding: 22px 28px;
+            margin-bottom: 32px;
+        }
+
+        .decisions-callout h2 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--orange);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .decisions-callout ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .decisions-callout ul li {
+            font-size: 14px;
+            color: var(--gray-800);
+            padding: 6px 0 6px 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .decisions-callout ul li::before {
+            content: "\25B6";
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-size: 9px;
+            top: 10px;
+        }
+
+        /* Control Bar */
+        .control-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .control-button {
+            background: #ffffff;
+            border: 1px solid var(--gray-300);
+            color: var(--gray-600);
+            padding: 7px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition);
+            letter-spacing: 0.2px;
+        }
+
+        .control-button:hover {
+            background: var(--gray-50);
+            border-color: var(--navy);
+            color: var(--navy);
+        }
+
+        .control-button.active {
+            background: var(--navy);
+            color: #ffffff;
+            border-color: var(--navy);
+        }
+
+        /* Live Region for filter announcements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Category Sections */
+        .category-section { margin-top: 40px; }
+        .category-section:first-of-type { margin-top: 0; }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--navy);
+        }
+
+        .category-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .category-count {
+            font-size: 11px;
+            font-weight: 700;
+            background: var(--navy);
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: box-shadow var(--transition);
+        }
+
+        .project-card:hover { box-shadow: var(--shadow-md); }
+
+        .project-header {
+            padding: 16px 20px;
+            cursor: pointer;
+            transition: background-color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .project-header:hover { background-color: var(--gray-50); }
+
+        .expand-icon {
+            font-size: 10px;
+            color: var(--gray-500);
+            min-width: 18px;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-card.expanded .expand-icon { transform: rotate(90deg); }
+
+        .project-title-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .project-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 180px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: 3px;
+            overflow: hidden;
+            min-width: 100px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-fill.low { background-color: var(--red); }
+        .progress-fill.medium { background-color: var(--orange); }
+        .progress-fill.high { background-color: var(--accent); }
+        .progress-fill.complete { background-color: var(--green); }
+
+        .progress-percent {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-600);
+            min-width: 40px;
+            text-align: right;
+        }
+
+        .status-badge {
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            white-space: nowrap;
+        }
+
+        .status-badge.complete {
+            background-color: var(--green-bg);
+            color: var(--green);
+        }
+
+        .status-badge.in-progress {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .status-badge.paused {
+            background-color: var(--orange-bg);
+            color: var(--orange);
+        }
+
+        .status-badge.not-started {
+            background-color: var(--gray-200);
+            color: var(--gray-600);
+        }
+
+        .status-badge.blocked {
+            background-color: #ffebee;
+            color: var(--red);
+        }
+
+        /* Project Details */
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-in-out;
+        }
+
+        .project-card.expanded .project-details {
+            max-height: 2000px;
+        }
+
+        .project-content {
+            padding: 20px 20px 24px 52px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .detail-section { margin-bottom: 20px; }
+        .detail-section:last-child { margin-bottom: 0; }
+
+        .detail-section h3 {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+
+        .detail-section .info-grid {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 6px 12px;
+        }
+
+        .detail-section .info-label {
+            font-size: 13px;
+            color: var(--gray-600);
+            font-weight: 600;
+        }
+
+        .detail-section .info-value {
+            font-size: 13px;
+            color: var(--gray-800);
+        }
+
+        .detail-section p {
+            font-size: 14px;
+            color: var(--gray-700);
+            line-height: 1.65;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-section ul li {
+            font-size: 13px;
+            color: var(--gray-700);
+            margin-bottom: 6px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.55;
+        }
+
+        .detail-section ul li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .detail-section ul li strong { color: var(--navy-light); }
+
+        .detail-section a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .detail-section a:hover { text-decoration: underline; }
+
+        .waiting-section {
+            background: #fff8e1;
+            border-left: 3px solid #ffa000;
+            padding: 14px 16px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-top: 16px;
+        }
+
+        .waiting-section h3 { color: var(--orange) !important; }
+
+        .dns-diagram {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-300);
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 12px;
+            line-height: 1.9;
+            color: var(--gray-800);
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid var(--gray-300);
+            padding: 28px 40px;
+            text-align: center;
+        }
+
+        footer .contact-info {
+            font-size: 13px;
+            color: var(--gray-700);
+        }
+
+        footer .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        footer .contact-info a:hover { text-decoration: underline; }
+
+        footer .generated-date {
+            font-size: 11px;
+            color: var(--gray-500);
+            margin-top: 8px;
+        }
+
+        /* Hidden utility */
+        .hidden { display: none !important; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            header { padding: 24px 24px; }
+            main { padding: 28px 24px 60px; }
+        }
+
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 12px; }
+            .header-right { text-align: left; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .project-title-section { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .progress-container { width: 100%; }
+            .project-content { padding: 16px 16px 20px 16px; }
+            header { padding: 20px 16px; }
+            main { padding: 20px 16px 48px; }
+            footer { padding: 24px 16px; }
+            .control-bar { justify-content: flex-start; }
+            .exec-summary { padding: 20px; }
+            .decisions-callout { padding: 18px 20px; }
+            .overall-progress { flex-wrap: wrap; }
+        }
+
+        @media (max-width: 480px) {
+            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .metric-card { padding: 16px 12px; }
+            .metric-card .number { font-size: 28px; }
+            .header-left h1 { font-size: 22px; }
+        }
+
+        /* Print */
+        @media print {
+            body { background: #fff; }
+            .control-bar, .skip-nav { display: none !important; }
+            .project-card { break-inside: avoid; box-shadow: none; border: 1px solid var(--gray-300); }
+            .project-details { max-height: none !important; }
+            .project-card.expanded .project-details { max-height: none; }
+            .metric-card { box-shadow: none; border: 1px solid var(--gray-300); }
+            .exec-summary, .decisions-callout, .overall-progress { box-shadow: none; border: 1px solid var(--gray-300); }
+            footer { border-top: 1px solid var(--gray-300); }
+            header { border-bottom: 1px solid var(--gray-300); }
+            a { color: var(--navy) !important; }
+            .decorative-bar { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .status-badge { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <div class="decorative-bar" role="presentation"></div>
+
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-left">
+                <h1>NetAesthetics</h1>
+                <p>Project Status Report: Visionary Solutions</p>
+            </div>
+            <div class="header-right">
+                <div class="date">March 23, 2026</div>
+                <div class="period">Weekly Update</div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Executive Summary -->
+        <section class="exec-summary" aria-label="Executive Summary">
+            <h2>Executive Summary</h2>
+            <p>All workstreams are tracking on schedule. The VAST B2B and Scout B2C websites are both at 70% completion with deployment pipelines being established. DNS/Domain architecture is 85% complete. Four deliverables (Commercial Expansion presentation, WAN 101 presentation, Defense-Grade Networks 2-pager, and Elite Lead Gen one-pager) have been completed and delivered. Platform naming research is paused pending expert trademark consultation. Two items require client input to unblock next milestones.</p>
+        </section>
+
+        <!-- Metrics -->
+        <section class="metrics-section" aria-label="Project Metrics">
+            <div class="metrics-grid">
+                <div class="metric-card total">
+                    <div class="number">9</div>
+                    <div class="label">Total Projects</div>
+                </div>
+                <div class="metric-card in-progress">
+                    <div class="number">4</div>
+                    <div class="label">In Progress</div>
+                </div>
+                <div class="metric-card completed">
+                    <div class="number">4</div>
+                    <div class="label">Completed</div>
+                </div>
+                <div class="metric-card paused">
+                    <div class="number">1</div>
+                    <div class="label">Paused</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overall Progress -->
+        <div class="overall-progress" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Overall portfolio completion: 85%">
+            <span class="op-label">Portfolio Completion</span>
+            <div class="op-bar">
+                <div class="op-fill" style="width: 85%"></div>
+            </div>
+            <span class="op-percent">85%</span>
+        </div>
+
+        <!-- Decisions Needed -->
+        <section class="decisions-callout" aria-label="Decisions Needed from Client">
+            <h2><span aria-hidden="true">&#9888;</span> Waiting on Client</h2>
+            <ul>
+                <li><strong>VAST B2B Website</strong> &mdash; Git access invite confirmation needed to unblock deployment</li>
+                <li><strong>Scout B2C Website</strong> &mdash; "Scout" trademark clearance and app UI feature requirements</li>
+                <li><strong>DNS Architecture</strong> &mdash; Confirmation on accounts.scoutautos.com original configuration</li>
+            </ul>
+        </section>
+
+        <!-- Control Bar -->
+        <nav class="control-bar" aria-label="Project filters">
+            <button class="control-button" id="expandAll" aria-label="Expand all project details">Expand All</button>
+            <button class="control-button" id="collapseAll" aria-label="Collapse all project details">Collapse All</button>
+            <button class="control-button active" data-filter="all" aria-label="Show all projects" aria-pressed="true">All</button>
+            <button class="control-button" data-filter="in-progress" aria-label="Show in-progress projects" aria-pressed="false">In Progress</button>
+            <button class="control-button" data-filter="paused" aria-label="Show paused projects" aria-pressed="false">Paused</button>
+            <button class="control-button" data-filter="complete" aria-label="Show completed projects" aria-pressed="false">Complete</button>
+        </nav>
+        <div id="filter-announce" class="sr-only" aria-live="polite"></div>
+
+        <!-- Websites -->
+        <section class="category-section" aria-label="Websites category">
+            <div class="category-header">
+                <h2>Websites</h2>
+                <span class="category-count">2 projects</span>
+            </div>
+
+            <!-- VAST B2B Website -->
+            <div class="project-card" data-status="in-progress">
+                <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="VAST B2B Website, 70% complete, In Progress. Click to expand details.">
+                    <span class="expand-icon" aria-hidden="true">&#9654;</span>
+                    <div class="project-title-section">
+                        <span class="project-title">VAST B2B Website</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="70% complete">
+                                <div class="progress-fill high" style="width: 70%"></div>
+                            </div>
+                            <span class="progress-percent">70%</span>
+                        </div>
+                        <span class="status-badge in-progress">In Progress</span>
+                    </div>
+                </div>
+                <div class="project-details" id="details-vast">
+                    <div class="project-content">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <div class="info-grid">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Deployment Preparation</span>
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value">March 20, 2026</span>
+                                <span class="info-label">Owner:</span>
+                                <span class="info-value">Rasheid Scarlett</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Description</h3>
+                            <p>B2B dealer-facing marketing website for Visionary's AI-powered automotive platform. Site being prepared for Git deployment to production.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Links</h3>
+                            <ul>
+                                <li><a href="http://visionaryauto.ai" target="_blank" rel="noopener">Production: visionaryauto.ai</a> (redirect being removed for VAST deploy)</li>
+                                <li><a href="https://netaesthetics.ai/vast" target="_blank" rel="noopener">Staging: netaesthetics.ai/vast</a></li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <ul>
+                                <li><strong>Mar 20</strong> - Juniper presentation edits completed and queued for deploy</li>
+                                <li><strong>Mar 20</strong> - Site being split from "Ops" for Git deployment preparation</li>
+                                <li><strong>Mar 18</strong> - Feedback incorporated on dealer ROI positioning</li>
+                                <li><strong>Mar 15</strong> - Template direction finalized (Corporate B2B style)</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Next Steps</h3>
+                            <ul>
+                                <li>Complete Git repository setup and deployment pipeline</li>
+                                <li>Remove visionaryauto.ai redirect to enable VAST launch</li>
+                                <li>Implement GDPR compliance and cookie consent</li>
+                                <li>Optimize for SEO and AEO (Answer Engine Optimization)</li>
+                                <li>Add comprehensive privacy policy</li>
+                                <li>Final QA testing before production deployment</li>
+                            </ul>
+                        </div>
+                        <div class="waiting-section">
+                            <h3>Waiting on Client</h3>
+                            <ul>
+                                <li>Git access invite confirmation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scout B2C Website -->
+            <div class="project-card" data-status="in-progress">
+                <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Scout B2C Website, 70% complete, In Progress. Click to expand details.">
+                    <span class="expand-icon" aria-hidden="true">&#9654;</span>
+                    <div class="project-title-section">
+                        <span class="project-title">Scout B2C Website</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="70% complete">
+                                <div class="progress-fill high" style="width: 70%"></div>
+                            </div>
+                            <span class="progress-percent">70%</span>
+                        </div>
+                        <span class="status-badge in-progress">In Progress</span>
+                    </div>
+                </div>
+                <div class="project-details" id="details-scout">
+                    <div class="project-content">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <div class="info-grid">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Landing Page Polish + App UI</span>
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value">March 20, 2026</span>
+                                <span class="info-label">Owner:</span>
+                                <span class="info-value">Rasheid Scarlett</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Description</h3>
+                            <p>Consumer-facing website for AI car shopping assistant. Landing page live, app UI development in progress.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Links</h3>
+                            <ul>
+                                <li><a href="http://scoutautos.com" target="_blank" rel="noopener">Production: scoutautos.com</a></li>
+                                <li><a href="http://scoutautos.net" target="_blank" rel="noopener">Staging: scoutautos.net</a> (integration/staging only)</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <ul>
+                                <li><strong>Mar 20</strong> - Landing page polish prioritized in BD sync</li>
+                                <li><strong>Mar 20</strong> - Ops separated from integration/staging environments</li>
+                                <li><strong>Mar 18</strong> - Design direction documented in VAST/Scout Website Design Guide</li>
+                                <li><strong>Mar 15</strong> - Domain structure finalized (scoutautos.com for B2C)</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Next Steps</h3>
+                            <ul>
+                                <li>Complete landing page polish and optimization</li>
+                                <li>Begin app UI development and design system</li>
+                                <li>Implement GDPR compliance and cookie consent</li>
+                                <li>Optimize for SEO and AEO (Answer Engine Optimization)</li>
+                                <li>Add comprehensive privacy policy</li>
+                                <li>Implement waitlist signup and email automation</li>
+                            </ul>
+                        </div>
+                        <div class="waiting-section">
+                            <h3>Waiting on Client</h3>
+                            <ul>
+                                <li>"Scout" name trademark clearance (may require placeholder branding)</li>
+                                <li>App UI design direction and feature requirements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infrastructure -->
+        <section class="category-section" aria-label="Infrastructure category">
+            <div class="category-header">
+                <h2>Infrastructure</h2>
+                <span class="category-count">1 project</span>
+            </div>
+
+            <!-- DNS/Domain Architecture -->
+            <div class="project-card" data-status="in-progress">
+                <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="DNS/Domain Architecture and Documentation, 85% complete, In Progress. Click to expand details.">
+                    <span class="expand-icon" aria-hidden="true">&#9654;</span>
+                    <div class="project-title-section">
+                        <span class="project-title">DNS/Domain Architecture & Documentation</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="85% complete">
+                                <div class="progress-fill high" style="width: 85%"></div>
+                            </div>
+                            <span class="progress-percent">85%</span>
+                        </div>
+                        <span class="status-badge in-progress">In Progress</span>
+                    </div>
+                </div>
+                <div class="project-details" id="details-dns">
+                    <div class="project-content">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <div class="info-grid">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Configuration + Documentation</span>
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value">March 20, 2026</span>
+                                <span class="info-label">Owner:</span>
+                                <span class="info-value">Rasheid Scarlett</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Description</h3>
+                            <p>Domain structure, DNS configuration, and architecture documentation for all Visionary automotive platform properties. Mintlify wiki being developed for customer/onboarding documentation.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Architecture Overview</h3>
+                            <ul>
+                                <li><a href="https://visionarysolutions.mintlify.app/architecture/overview" target="_blank" rel="noopener">Mintlify Documentation Site</a> (in progress, being updated)</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Domain Structure</h3>
+                            <div class="dns-diagram">SCOUT (B2C) - scoutautos.com
+-----------------------------
+scoutautos.com → B2C Marketing site (PRODUCTION)
+scoutautos.net → Integration/Staging (ops testing before prod push)
+app.scoutautos.com → Consumer app
+accounts.scoutautos.com → Auth (sign-in, sign-up)
+
+
+VAST (B2B) - visionaryauto.ai
+-----------------------------
+visionaryauto.ai → B2B dealer marketing site
+dealers.visionaryauto.ai → Dealer portal/app (future)</div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <ul>
+                                <li><strong>Mar 22</strong> - Finalized domain structure for B2B and B2C separation</li>
+                                <li><strong>Mar 20</strong> - Separated Scout ops from integration/staging environments</li>
+                                <li><strong>Mar 20</strong> - Coordinated visionaryauto.ai redirect removal for VAST launch</li>
+                                <li><strong>Mar 20</strong> - Mintlify wiki architecture section updated</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Next Steps</h3>
+                            <ul>
+                                <li>Complete accounts.scoutautos.com subdomain DNS configuration</li>
+                                <li>Finalize Mintlify architecture documentation updates</li>
+                                <li>Implement Google Tag Manager and cookie consent</li>
+                                <li>Verify all subdomains resolving correctly post-deployment</li>
+                            </ul>
+                        </div>
+                        <div class="waiting-section">
+                            <h3>Waiting on Client</h3>
+                            <ul>
+                                <li>Confirmation on accounts.scoutautos.com original configuration</li>
+                                <li>Git access for deployment automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy -->
+        <section class="category-section" aria-label="Strategy category">
+            <div class="category-header">
+                <h2>Strategy</h2>
+                <span class="category-count">1 project</span>
+            </div>
+
+            <!-- Platform Naming Research -->
+            <div class="project-card" data-status="paused">
+                <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Platform Naming Research, 75% complete, Paused. Click to expand details.">
+                    <span class="expand-icon" aria-hidden="true">&#9654;</span>
+                    <div class="project-title-section">
+                        <span class="project-title">Platform Naming Research</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="75% complete">
+                                <div class="progress-fill high" style="width: 75%"></div>
+                            </div>
+                            <span class="progress-percent">75%</span>
+                        </div>
+                        <span class="status-badge paused">Paused</span>
+                    </div>
+                </div>
+                <div class="project-details" id="details-naming">
+                    <div class="project-content">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <div class="info-grid">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Paused - Awaiting Expert Input</span>
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value">March 20, 2026</span>
+                                <span class="info-label">Owner:</span>
+                                <span class="info-value">Rasheid Scarlett</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Description</h3>
+                            <p>Comprehensive trademark research and naming strategy for dealer-facing platform. Project paused pending expert legal and marketing consultation. VAST name will be maintained in the interim.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <ul>
+                                <li><strong>Mar 20</strong> - "Ignition" name variants failed trademark clearance</li>
+                                <li><strong>Mar 20</strong> - Decision to defer naming to marketing professionals</li>
+                                <li><strong>Mar 20</strong> - Platform branding raised in context of Northrop Grumman/Lockheed Martin expectations</li>
+                                <li><strong>Mar 21</strong> - Proposed ASTREN with multiple backronym options</li>
+                                <li><strong>Mar 18</strong> - SMTR ruled out by trademark attorney</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Next Steps</h3>
+                            <ul>
+                                <li>Engage expert legal counsel for trademark strategy</li>
+                                <li>Engage marketing professionals for final naming decision</li>
+                                <li>Maintain VAST branding across all materials in interim</li>
+                                <li>Run formal trademark search on selected name when ready</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sales Collateral & Presentations -->
+        <section class="category-section" aria-label="Sales Collateral and Presentations category">
+            <div class="category-header">
+                <h2>Sales Collateral & Presentations</h2>
+                <span class="category-count">5 projects</span>
+            </div>
+
+            <!-- Juniper -->
+            <div class="project-card" data-status="in-progress">
+                <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Juniper Networks Partnership Presentation, 85% complete, In Progress. Click to expand details.">
+                    <span class="expand-icon" aria-hidden="true">&#9654;</span>
+                    <div class="project-title-section">
+                        <span class="project-title">Juniper Networks Partnership Presentation</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="85% complete">
+                                <div class="progress-fill high" style="width: 85%"></div>
+                            </div>
+                            <span class="progress-percent">85%</span>
+                        </div>
+                        <span class="status-badge in-progress">In Progress</span>
+                    </div>
+                </div>
+                <div class="project-details" id="details-juniper">
+                    <div class="project-content">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <div class="info-grid">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Final Revisions</span>
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value">March 18, 2026</span>
+                                <span class="info-label">Owner:</span>
+                                <span class="info-value">Rasheid Scarlett</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Description</h3>
+                            <p>Multi-vertical presentation positioning Visionary as strategic enabler for Juniper's AI & Data Center sales team. Includes Healthcare, Manufacturing, and Regional case studies.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <ul>
+                                <li><strong>Mar 18</strong> - Client feedback on geographic connectivity depiction</li>
+                                <li><strong>Mar 18</strong> - Visual refinements to highlight combined outcomes as selling points</li>
+                                <li><strong>Mar 15</strong> - Expanded to 12 slides with 4 vertical case studies</li>
+                                <li><strong>Mar 13</strong> - Regional Healthcare case study example refined</li>
+                                <li><strong>Mar 12</strong> - Added split-screen format distinguishing Juniper vs. Visionary contributions</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Next Steps</h3>
+                            <ul>
+                                <li>Enhance geographic separation visualization across sites</li>
+                                <li>Emphasize "Combined Outcomes" section prominence</li>
+                                <li>Address data flow complexity across public internet</li>
+                                <li>Final review and stakeholder approval</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WAN 101 -->
+            <div class="project-card" data-status="complete">
+                <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="WAN 101 and West Virginia Facility Presentation, 100% complete, Complete. Click to expand details.">
+                    <span class="expand-icon" aria-hidden="true">&#9654;</span>
+                    <div class="project-title-section">
+                        <span class="project-title">WAN 101 & West Virginia Facility Presentation</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="100% complete">
+                                <div class="progress-fill complete" style="width: 100%"></div>
+                            </div>
+                            <span class="progress-percent">100%</span>
+                        </div>
+                        <span class="status-badge complete">Complete</span>
+                    </div>
+                </div>
+                <div class="project-details" id="details-wan">
+                    <div class="project-content">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <div class="info-grid">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Complete & Delivered</span>
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value">March 12, 2026</span>
+                                <span class="info-label">Owner:</span>
+                                <span class="info-value">Rasheid Scarlett</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Description</h3>
+                            <p>Educational presentation covering WAN fundamentals and West Virginia facility network architecture. Version 4 complete and shared with stakeholders.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <ul>
+                                <li><strong>Mar 12</strong> - Version 4 completed and delivered to stakeholders</li>
+                                <li><strong>Mar 10</strong> - Facility network architecture diagrams finalized</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Next Steps</h3>
+                            <ul>
+                                <li>None - presentation complete and approved</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Defense-Grade 2-Pager -->
+            <div class="project-card" data-status="complete">
+                <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Why Visionary Solutions Defense-Grade Networks 2-Pager, 100% complete, Complete. Click to expand details.">
+                    <span class="expand-icon" aria-hidden="true">&#9654;</span>
+                    <div class="project-title-section">
+                        <span class="project-title">Why Visionary Solutions / Defense-Grade Networks 2-Pager</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="100% complete">
+                                <div class="progress-fill complete" style="width: 100%"></div>
+                            </div>
+                            <span class="progress-percent">100%</span>
+                        </div>
+                        <span class="status-badge complete">Complete</span>
+                    </div>
+                </div>
+                <div class="project-details" id="details-defense">
+                    <div class="project-content">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <div class="info-grid">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Complete</span>
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value">March 12, 2026</span>
+                                <span class="info-label">Owner:</span>
+                                <span class="info-value">Rasheid Scarlett</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Description</h3>
+                            <p>Sales collateral explaining Visionary's value proposition for managed network services. Document evolved from "Why Visionary Solutions" to "Defense-Grade Networks Aren't Just for Government Anymore" positioning.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <ul>
+                                <li><strong>Mar 12</strong> - Final version complete with Defense-Grade Networks positioning</li>
+                                <li><strong>Mar 10</strong> - Draft v2 with updated positioning and branding</li>
+                                <li><strong>Mar 8</strong> - Updated specifications: 60-day deployment, 99.99% SLA, CONUS coverage</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Next Steps</h3>
+                            <ul>
+                                <li>None - complete and approved</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elite Lead Gen -->
+            <div class="project-card" data-status="complete">
+                <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Elite Lead Generation One-Pager, 100% complete, Complete. Click to expand details.">
+                    <span class="expand-icon" aria-hidden="true">&#9654;</span>
+                    <div class="project-title-section">
+                        <span class="project-title">Elite Lead Generation One-Pager</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="100% complete">
+                                <div class="progress-fill complete" style="width: 100%"></div>
+                            </div>
+                            <span class="progress-percent">100%</span>
+                        </div>
+                        <span class="status-badge complete">Complete</span>
+                    </div>
+                </div>
+                <div class="project-details" id="details-elite">
+                    <div class="project-content">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <div class="info-grid">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Complete</span>
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value">March 5, 2026</span>
+                                <span class="info-label">Owner:</span>
+                                <span class="info-value">Rasheid Scarlett</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Description</h3>
+                            <p>Pattern-interrupt style one-pager for enterprise network lead generation</p>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <ul>
+                                <li><strong>Mar 5</strong> - Final version delivered</li>
+                                <li><strong>Mar 3</strong> - "Trojan Horse" market report approach approved</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Next Steps</h3>
+                            <ul>
+                                <li>None - complete</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commercial Expansion -->
+            <div class="project-card" data-status="complete">
+                <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Commercial Expansion Presentation, 100% complete, Complete. Click to expand details.">
+                    <span class="expand-icon" aria-hidden="true">&#9654;</span>
+                    <div class="project-title-section">
+                        <span class="project-title">Commercial Expansion Presentation</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="100% complete">
+                                <div class="progress-fill complete" style="width: 100%"></div>
+                            </div>
+                            <span class="progress-percent">100%</span>
+                        </div>
+                        <span class="status-badge complete">Complete</span>
+                    </div>
+                </div>
+                <div class="project-details" id="details-commercial">
+                    <div class="project-content">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <div class="info-grid">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Complete & Delivered</span>
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value">March 4, 2026</span>
+                                <span class="info-label">Owner:</span>
+                                <span class="info-value">Rasheid Scarlett</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Description</h3>
+                            <p>Commercial expansion capabilities presentation delivered to Andrew DiBella for Anduril strategic partnership meeting. Comprehensive deck showcasing Visionary Solutions' commercial market expansion strategy and capabilities.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <ul>
+                                <li><strong>Mar 5</strong> - Confirmation received from Andrew DiBella on successful delivery</li>
+                                <li><strong>Mar 4</strong> - Final presentation delivered to Andrew for Anduril meeting</li>
+                                <li><strong>Feb 28</strong> - Presentation completed (original filename: 02282026_Visionary Commercial Expansion.pdf)</li>
+                                <li><strong>Feb 25</strong> - Project initiated by Andrew DiBella request</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>Next Steps</h3>
+                            <ul>
+                                <li>None - complete and delivered</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="contact-info">
+            Questions? Contact Rasheid Scarlett at <a href="mailto:RScarlett@NetAesthetics.com">RScarlett@NetAesthetics.com</a>
+        </div>
+        <div class="generated-date">
+            Report generated: March 23, 2026
+        </div>
+    </footer>
+
+    <script>
+        // Expand/Collapse individual cards
+        document.querySelectorAll('.project-header').forEach(header => {
+            header.addEventListener('click', function () {
+                const card = this.closest('.project-card');
+                card.classList.toggle('expanded');
+                const isExpanded = card.classList.contains('expanded');
+                this.setAttribute('aria-expanded', String(isExpanded));
+            });
+
+            header.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Expand All
+        document.getElementById('expandAll').addEventListener('click', function () {
+            document.querySelectorAll('.project-card:not(.hidden)').forEach(card => {
+                card.classList.add('expanded');
+                card.querySelector('.project-header').setAttribute('aria-expanded', 'true');
+            });
+        });
+
+        // Collapse All
+        document.getElementById('collapseAll').addEventListener('click', function () {
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.classList.remove('expanded');
+                card.querySelector('.project-header').setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('[data-filter]').forEach(button => {
+            button.addEventListener('click', function () {
+                const filter = this.getAttribute('data-filter');
+
+                // Update active state and aria-pressed
+                document.querySelectorAll('[data-filter]').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                });
+                this.classList.add('active');
+                this.setAttribute('aria-pressed', 'true');
+
+                let visibleCount = 0;
+
+                // Show/hide project cards
+                document.querySelectorAll('.project-card').forEach(card => {
+                    const status = card.getAttribute('data-status');
+                    if (filter === 'all' || status === filter) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                        card.classList.remove('expanded');
+                        card.querySelector('.project-header').setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Hide category sections with no visible cards
+                document.querySelectorAll('.category-section').forEach(section => {
+                    const visibleCards = section.querySelectorAll('.project-card:not(.hidden)');
+                    section.classList.toggle('hidden', visibleCards.length === 0);
+                });
+
+                // Announce to screen readers
+                const announce = document.getElementById('filter-announce');
+                const filterLabel = filter === 'all' ? 'all' : filter.replace('-', ' ');
+                announce.textContent = 'Showing ' + visibleCount + ' ' + filterLabel + ' project' + (visibleCount !== 1 ? 's' : '');
+            });
+        });
+    </script>
+</body>
+</html>
